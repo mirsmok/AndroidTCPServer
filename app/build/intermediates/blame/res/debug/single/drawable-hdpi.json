@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/mirsmok/AndroidStudioProjects/AndroidTCPServer/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_launcher.png",
+        "source": "/home/mirsmok/AndroidStudioProjects/AndroidTCPServer/app/src/main/res/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/mirsmok/AndroidStudioProjects/AndroidTCPServer/app/build/intermediates/res/merged/debug/drawable-hdpi/beer.png",
+        "source": "/home/mirsmok/AndroidStudioProjects/AndroidTCPServer/app/src/main/res/drawable-hdpi/beer.png"
+    }
+]
