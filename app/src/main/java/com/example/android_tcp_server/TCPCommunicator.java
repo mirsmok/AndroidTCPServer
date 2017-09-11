@@ -94,7 +94,6 @@ public class TCPCommunicator {
 			
 			try {
 				ss = new ServerSocket(TCPCommunicator.getServerPort());
-
 				s = ss.accept();
 				s.setKeepAlive(true);
 	             in = new BufferedReader(new InputStreamReader(s.getInputStream()));

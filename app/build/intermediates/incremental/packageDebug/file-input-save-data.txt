@@ -1,0 +1,33 @@
+#Internal package file, do not edit.
+#Mon Sep 11 19:58:54 CEST 2017
+2.base=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_7e977a22d700bcb181878cf226d2c0a648a9aabc
+5.file=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_/res/menu/order.xml
+5.set=ANDROID_RESOURCE
+3.base=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_
+6.file=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_e4a09f9267c4c6e74d7459da9f7cd038158df077/classes.dex
+2.set=DEX
+4.base=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_
+7.file=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_/AndroidManifest.xml
+7.set=ANDROID_RESOURCE
+count=10
+0.file=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_/res/layout/main_activity_layout.xml
+5.base=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_
+8.file=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/ic_launcher.png
+4.set=ANDROID_RESOURCE
+6.base=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_e4a09f9267c4c6e74d7459da9f7cd038158df077
+1.file=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_/resources.arsc
+9.set=ANDROID_RESOURCE
+9.file=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_/res/menu/main.xml
+1.set=ANDROID_RESOURCE
+7.base=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_
+2.file=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_7e977a22d700bcb181878cf226d2c0a648a9aabc/classes.dex
+6.set=DEX
+0.base=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_
+8.base=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_
+3.file=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_/res/drawable-hdpi-v4/beer.png
+3.set=ANDROID_RESOURCE
+1.base=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_
+9.base=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_
+4.file=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_/res/menu/main_activity2.xml
+8.set=ANDROID_RESOURCE
+0.set=ANDROID_RESOURCE

@@ -1,0 +1,369 @@
+From site: https://stackoverflow.com/questions/10131377/socket-programming-multiple-client-to-one-server
+
+socket programming multiple client to one server
+
+Ask Question
+up vote
+37
+down vote
+favorite
+26
+How do you handle multiple client to connect to one server? I have this LogServer.java
+
+import javax.net.ssl.*;
+import javax.net.*;
+import java.io.*;
+import java.net.*;
+
+public class LogServer {
+  private static final int PORT_NUM = 5000;
+  public static void main(String args[]) {
+    ServerSocketFactory serverSocketFactory =
+      ServerSocketFactory.getDefault();
+    ServerSocket serverSocket = null;
+    try {
+      serverSocket =
+        serverSocketFactory.createServerSocket(PORT_NUM);
+    } catch (IOException ignored) {
+      System.err.println("Unable to create server");
+      System.exit(-1);
+    }
+    System.out.printf("LogServer running on port: %s%n", PORT_NUM);
+    while (true) {
+      Socket socket = null;
+      try {
+        socket = serverSocket.accept();
+        InputStream is = socket.getInputStream();
+        BufferedReader br = new BufferedReader(
+          new InputStreamReader(is, "US-ASCII"));
+        String line = null;
+        while ((line = br.readLine()) != null) {
+          System.out.println(line);
+        }
+      } catch (IOException exception) {
+        // Just handle next request.
+      } finally {
+        if (socket != null) {
+          try {
+            socket.close();
+          } catch (IOException ignored) {
+          }
+        }
+      }
+    }
+  }
+}
+and an embedded applet with part of the code like this e.g
+
+import java.io.*;
+import java.util.logging.*;
+
+public class LogTest
+{
+  private static Logger logger = Logger.getAnonymousLogger();
+
+  public static void main(String argv[]) throws IOException
+  {
+    Handler handler = new SocketHandler("localhost", 5000);
+    logger.addHandler(handler);
+    logger.log(Level.SEVERE, "Hello, World");
+    logger.log(Level.SEVERE, "Welcome Home");
+    logger.log(Level.SEVERE, "Hello, World");
+    logger.log(Level.SEVERE, "Welcome Home");
+  }
+}
+now the question is if I run "java LogServer" on the server, it will open the application and waiting for input stream and if I open my site, it will start streaming the log. But if I open one more using other computer/network, the second site does not log the stream. seems like it's because the first one still bind to port 5000.
+
+How do I handle this? How does socket actually work with multiple client / one server?
+
+java sockets applet logging port
+shareimprove this question
+edited Apr 13 '12 at 16:57
+asked Apr 12 '12 at 20:34
+
+Harts
+1,34383361
+add a comment
+3 Answers
+active oldest votes
+up vote
+64
+down vote
+accepted
+For every client you need to start separate thread. Example:
+
+public class ThreadedEchoServer {
+
+    static final int PORT = 1978;
+
+    public static void main(String args[]) {
+        ServerSocket serverSocket = null;
+        Socket socket = null;
+
+        try {
+            serverSocket = new ServerSocket(PORT);
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+        while (true) {
+            try {
+                socket = serverSocket.accept();
+            } catch (IOException e) {
+                System.out.println("I/O error: " + e);
+            }
+            // new thread for a client
+            new EchoThread(socket).start();
+        }
+    }
+}
+and
+
+public class EchoThread extends Thread {
+    protected Socket socket;
+
+    public EchoThread(Socket clientSocket) {
+        this.socket = clientSocket;
+    }
+
+    public void run() {
+        InputStream inp = null;
+        BufferedReader brinp = null;
+        DataOutputStream out = null;
+        try {
+            inp = socket.getInputStream();
+            brinp = new BufferedReader(new InputStreamReader(inp));
+            out = new DataOutputStream(socket.getOutputStream());
+        } catch (IOException e) {
+            return;
+        }
+        String line;
+        while (true) {
+            try {
+                line = brinp.readLine();
+                if ((line == null) || line.equalsIgnoreCase("QUIT")) {
+                    socket.close();
+                    return;
+                } else {
+                    out.writeBytes(line + "\n\r");
+                    out.flush();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+                return;
+            }
+        }
+    }
+}
+You can also go with more advanced solution, that uses NIO selectors, so you will not have to create thread for every client, but that's a bit more complicated.
+
+shareimprove this answer
+edited Jun 16 at 10:14
+
+Martin Vseticka
+14.4k1879149
+answered Apr 12 '12 at 20:39
+
+Piotr Kochański
+13.3k45768
+  	 	
+nodejs doesn't make thread for every client, Are you saying that nodejs uses NIO selectors ? – niceman Nov 21 '15 at 22:46
+  	 	
+no he is not saying nodejs, he is saying NIO. – gumuruh Jun 24 at 8:48
+add a comment
+
+Did you find this question interesting? Try our newsletter
+
+Sign up for our newsletter and get our top new questions delivered to your inbox (see an example). 
+email address
+  Subscribe
+up vote
+13
+down vote
+This is the echo server handling multiple clients... Runs fine and good using Threads
+
+// echo server
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+
+public class Server_X_Client {
+public static void main(String args[]){
+
+
+    Socket s=null;
+    ServerSocket ss2=null;
+    System.out.println("Server Listening......");
+    try{
+        ss2 = new ServerSocket(4445); // can also use static final PORT_NUM , when defined
+
+    }
+    catch(IOException e){
+    e.printStackTrace();
+    System.out.println("Server error");
+
+    }
+
+    while(true){
+        try{
+            s= ss2.accept();
+            System.out.println("connection Established");
+            ServerThread st=new ServerThread(s);
+            st.start();
+
+        }
+
+    catch(Exception e){
+        e.printStackTrace();
+        System.out.println("Connection Error");
+
+    }
+    }
+
+}
+
+}
+
+class ServerThread extends Thread{  
+
+    String line=null;
+    BufferedReader  is = null;
+    PrintWriter os=null;
+    Socket s=null;
+
+    public ServerThread(Socket s){
+        this.s=s;
+    }
+
+    public void run() {
+    try{
+        is= new BufferedReader(new InputStreamReader(s.getInputStream()));
+        os=new PrintWriter(s.getOutputStream());
+
+    }catch(IOException e){
+        System.out.println("IO error in server thread");
+    }
+
+    try {
+        line=is.readLine();
+        while(line.compareTo("QUIT")!=0){
+
+            os.println(line);
+            os.flush();
+            System.out.println("Response to Client  :  "+line);
+            line=is.readLine();
+        }   
+    } catch (IOException e) {
+
+        line=this.getName(); //reused String line for getting thread name
+        System.out.println("IO Error/ Client "+line+" terminated abruptly");
+    }
+    catch(NullPointerException e){
+        line=this.getName(); //reused String line for getting thread name
+        System.out.println("Client "+line+" Closed");
+    }
+
+    finally{    
+    try{
+        System.out.println("Connection Closing..");
+        if (is!=null){
+            is.close(); 
+            System.out.println(" Socket Input Stream Closed");
+        }
+
+        if(os!=null){
+            os.close();
+            System.out.println("Socket Out Closed");
+        }
+        if (s!=null){
+        s.close();
+        System.out.println("Socket Closed");
+        }
+
+        }
+    catch(IOException ie){
+        System.out.println("Socket Close Error");
+    }
+    }//end finally
+    }
+}
+Also here is the code for the client.. Just execute this code for as many times as you want to create multiple client..
+
+// A simple Client Server Protocol .. Client for Echo Server
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.net.InetAddress;
+import java.net.Socket;
+
+public class NetworkClient {
+
+public static void main(String args[]) throws IOException{
+
+
+    InetAddress address=InetAddress.getLocalHost();
+    Socket s1=null;
+    String line=null;
+    BufferedReader br=null;
+    BufferedReader is=null;
+    PrintWriter os=null;
+
+    try {
+        s1=new Socket(address, 4445); // You can use static final constant PORT_NUM
+        br= new BufferedReader(new InputStreamReader(System.in));
+        is=new BufferedReader(new InputStreamReader(s1.getInputStream()));
+        os= new PrintWriter(s1.getOutputStream());
+    }
+    catch (IOException e){
+        e.printStackTrace();
+        System.err.print("IO Exception");
+    }
+
+    System.out.println("Client Address : "+address);
+    System.out.println("Enter Data to echo Server ( Enter QUIT to end):");
+
+    String response=null;
+    try{
+        line=br.readLine(); 
+        while(line.compareTo("QUIT")!=0){
+                os.println(line);
+                os.flush();
+                response=is.readLine();
+                System.out.println("Server Response : "+response);
+                line=br.readLine();
+
+            }
+
+
+
+    }
+    catch(IOException e){
+        e.printStackTrace();
+    System.out.println("Socket read Error");
+    }
+    finally{
+
+        is.close();os.close();br.close();s1.close();
+                System.out.println("Connection Closed");
+
+    }
+
+}
+}
+shareimprove this answer
+edited Oct 17 '13 at 17:11
+answered Oct 17 '13 at 16:30
+
+Devi Prabhaharan
+13113
+add a comment
+up vote
+11
+down vote
+I guess the problem is that you need to start a separate thread for each connection and call serverSocket.accept() in a loop to accept more than one connection. It is not a problem to have more than one connection on the same port.
