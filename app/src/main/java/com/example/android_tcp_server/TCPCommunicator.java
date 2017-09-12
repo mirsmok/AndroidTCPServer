@@ -2,7 +2,9 @@ package com.example.android_tcp_server;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
@@ -81,17 +83,16 @@ public class TCPCommunicator {
 	}
 
 
-	public class InitTCPServerTask extends AsyncTask<Void, Void, Void>
-	{
-		public InitTCPServerTask()
-		{
-			
-		}
+	public class InitTCPServerTask extends AsyncTask<Void, Void, Void> {
+        public InitTCPServerTask() {
 
-		@Override
-		protected Void doInBackground(Void... params) {
+        }
 
-			
+        @Override
+        protected Void doInBackground(Void... params) {
+
+
+/*
 			try {
 				ss = new ServerSocket(TCPCommunicator.getServerPort());
 				s = ss.accept();
@@ -110,7 +111,9 @@ public class TCPCommunicator {
 						public void run() {
 							// TODO Auto-generated method stub
 							 for(OnTCPMessageRecievedListener listener:allListeners)
-					            	listener.onTCPMessageRecieved(finalMessage);
+
+
+					       		            			            	listener.onTCPMessageRecieved(finalMessage);
 					            Log.e("TCP", finalMessage);
 						}
 					});     
@@ -123,11 +126,77 @@ public class TCPCommunicator {
 			
 			
 			
-		}
-		
-	}
-	
+		}*/
+            try{
+                ss = new ServerSocket(TCPCommunicator.getServerPort());
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            Socket socket = null;
+            while (true) {
+                try {
+                    socket = ss.accept();
+                } catch (IOException e) {
+                    System.out.println("I/O error: " + e);
+                }
+                // new thread for a client
+                new EchoThread(socket).start();
+            }
+
+        }
+    }
 	public enum TCPWriterErrors{UnknownHostException,IOException,otherProblem,OK}
+
+	public class EchoThread extends Thread {
+		protected Socket socket;
+
+		public EchoThread(Socket clientSocket) {
+			this.socket = clientSocket;
+		}
+
+		public void run() {
+			InputStream inp = null;
+			BufferedReader brinp = null;
+			DataOutputStream out = null;
+			try {
+				inp = socket.getInputStream();
+				brinp = new BufferedReader(new InputStreamReader(inp));
+				out = new DataOutputStream(socket.getOutputStream());
+			} catch (IOException e) {
+				return;
+			}
+			String line;
+			while (true) {
+				try {
+					line = brinp.readLine();
+					if ((line == null) || line.equalsIgnoreCase("QUIT")) {
+						socket.close();
+						return;
+					} else {
+                        final String finalMessage=line;
+                        handler.post(new Runnable() {
+
+                            @Override
+                            public void run() {
+                                // TODO Auto-generated method stub
+                                for(OnTCPMessageRecievedListener listener:allListeners)
+
+
+                                    listener.onTCPMessageRecieved(finalMessage);
+                                Log.e("TCP", finalMessage);
+                            }
+                        });
+                        out.writeBytes(line + "\n\r");
+						out.flush();
+					}
+				} catch (IOException e) {
+					e.printStackTrace();
+					return;
+				}
+			}
+		}
+	}
 
 	public static void closeStreams() {
 		// TODO Auto-generated method stub
