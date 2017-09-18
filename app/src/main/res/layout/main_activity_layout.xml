@@ -1,59 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:gravity="center_horizontal"
-    android:orientation="vertical" >
+    android:orientation="horizontal">
 
-     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Server app"
-            android:textSize="20sp" 
-            android:layout_marginBottom="10dp"/>
-     
-     <LinearLayout
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/LayoutMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10px"
+        android:visibility="visible">
+
+
+        <Button
+            android:id="@+id/leftButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:onClick="someButtonClicked"
+            android:text="@string/LeftMenuBtn1" />
+
+        <Button
+            android:id="@+id/leftButton2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:onClick="someButtonClicked"
+            android:text="@string/LeftMenuBtn2" />
+
+        <Button
+            android:id="@+id/leftButton3"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:onClick="someButtonClicked"
+            android:text="@string/LeftMenuBtn3" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/LayoutSettings"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
         android:gravity="center_horizontal"
-        android:orientation="horizontal" >
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <TextView
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="enter text:"
-            android:textSize="14sp" 
-            android:layout_marginRight="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:text="Server app"
+            android:textSize="20sp" />
 
-        <EditText
-            android:id="@+id/txtContentToSend"
-            android:layout_width="200dp"
-            android:layout_height="40dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="enter text:"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/txtContentToSend"
+                android:layout_width="150dp"
+                android:layout_height="40dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSendToClient"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:onClick="someButtonClicked"
+            android:text="Send" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="178dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/txtInputFromClient"
+                android:layout_width="200dp"
+                android:layout_height="198dp" />
+
+        </LinearLayout>
     </LinearLayout>
-    
-    <Button
-        android:id="@+id/btnSendToClient"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
-        android:onClick="someButtonClicked"
-        android:text="Send" />
-    
+
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="178dp"
+        android:id="@+id/LayoutClients"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="center_horizontal"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:visibility="gone">
 
-        <EditText
-            android:id="@+id/txtInputFromClient"
-            android:layout_width="232dp"
-            android:layout_height="198dp" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
     </LinearLayout>
-
-
-
-    
-
-    
-
 </LinearLayout>
