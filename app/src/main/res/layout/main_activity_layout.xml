@@ -10,23 +10,44 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
-        android:padding="5dp">
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/menu_button">
 
         <Button
             android:id="@+id/btnDisplayMenu"
+            style="@style/menu_button"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:gravity="start"
-            android:onClick="someButtonClicked"
-            android:text="|||" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_gravity="center"
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/app_name"
-            android:textSize="20sp" />
+            android:background="@drawable/menu_button"
+            android:onClick="someButtonClicked"
+            android:text="| | |" />
+     <!--   <Button
+            android:background="@drawable/red_button"
+            android:id="@+id/button1"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:text="test"
+            style="@style/button_text" />
+-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="#3470f1"
+                android:textStyle="bold"
+                android:text="@string/app_name"
+                android:textSize="30sp" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -34,101 +55,104 @@
         android:layout_height="fill_parent"
         android:orientation="horizontal">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/LayoutMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="6dp"
-        android:visibility="visible">
-
-
-        <Button
-            android:id="@+id/leftButton1"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/LayoutMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:onClick="someButtonClicked"
-            android:text="@string/LeftMenuBtn1" />
+            android:orientation="vertical"
+            android:padding="6dp"
+            android:visibility="visible">
 
-        <Button
-            android:id="@+id/leftButton2"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:gravity="center"
-            android:onClick="someButtonClicked"
-            android:text="@string/LeftMenuBtn2" />
 
-        <Button
-            android:id="@+id/leftButton3"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:gravity="center"
-            android:onClick="someButtonClicked"
-            android:text="@string/LeftMenuBtn3" />
-    </LinearLayout>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/LayoutSettings"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal">
-
-            <TextView
+            <Button
+                android:id="@+id/leftButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:text="enter text:"
-                android:textSize="14sp" />
+                android:gravity="center"
+                android:onClick="someButtonClicked"
+                android:text="@string/LeftMenuBtn1"
+                android:background="@drawable/menu_left_button"/>
 
-            <EditText
-                android:id="@+id/txtContentToSend"
-                android:layout_width="150dp"
-                android:layout_height="40dp" />
+            <Button
+                android:id="@+id/leftButton2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:onClick="someButtonClicked"
+                android:background="@drawable/menu_left_button"
+                android:text="@string/LeftMenuBtn2" />
+
+            <Button
+                android:id="@+id/leftButton3"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:onClick="someButtonClicked"
+                android:background="@drawable/menu_left_button"
+                android:text="@string/LeftMenuBtn3" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btnSendToClient"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:onClick="someButtonClicked"
-            android:text="Send" />
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/LayoutSettings"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="enter text:"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/txtContentToSend"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnSendToClient"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:onClick="someButtonClicked"
+                android:text="Send" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="178dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/txtInputFromClient"
+                    android:layout_width="200dp"
+                    android:layout_height="198dp" />
+
+            </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="178dp"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/txtInputFromClient"
-                android:layout_width="200dp"
-                android:layout_height="198dp" />
-
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/LayoutClients"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <Button
-            android:id="@+id/button2"
+            android:id="@+id/LayoutClients"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

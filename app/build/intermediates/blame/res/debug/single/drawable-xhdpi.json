@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/home/mirsmok/work/AndroidTCPServer/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_launcher.png",
+        "source": "/home/mirsmok/work/AndroidTCPServer/app/src/main/res/drawable-xhdpi/ic_launcher.png"
+    },
+    {
         "merged": "/home/mirsmok/AndroidStudioProjects/AndroidTCPServer/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_launcher.png",
         "source": "/home/mirsmok/AndroidStudioProjects/AndroidTCPServer/app/src/main/res/drawable-xhdpi/ic_launcher.png"
     },

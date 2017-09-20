@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">AndroidTCPServer</string>
+    <string name="app_name">IQhome</string>
     <string name="action_settings">Settings</string>
     <string name="LeftMenuBtn1">Settings</string>
     <string name="LeftMenuBtn2">Clients</string>
