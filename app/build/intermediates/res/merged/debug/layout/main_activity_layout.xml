@@ -3,14 +3,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="horizontal">
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <Button
+            android:id="@+id/btnDisplayMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="start"
+            android:onClick="someButtonClicked"
+            android:text="|||" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            android:layout_gravity="left"/>
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/LayoutMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10px"
+        android:padding="6dp"
         android:visibility="visible">
 
 
@@ -46,14 +75,6 @@
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:visibility="gone">
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:text="Server app"
-            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -108,5 +129,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Button" />
+    </LinearLayout>
     </LinearLayout>
 </LinearLayout>

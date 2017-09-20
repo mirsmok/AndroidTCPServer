@@ -77,7 +77,14 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
                 LinearLayout TmpLayoutClients = (LinearLayout) findViewById(R.id.LayoutClients);
                 TmpLayoutClients.setVisibility(View.VISIBLE);
             }
-
+			if(view.getId()==R.id.btnDisplayMenu)
+			{
+				LinearLayout TmpLayoutMenu = (LinearLayout) findViewById(R.id.LayoutMenu);
+				if(TmpLayoutMenu.getVisibility()==View.VISIBLE)
+					TmpLayoutMenu.setVisibility(View.GONE);
+				else
+					TmpLayoutMenu.setVisibility(View.VISIBLE);
+			}
 	    	
     	}
     	catch(Exception e)
