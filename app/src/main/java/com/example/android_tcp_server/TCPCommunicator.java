@@ -22,6 +22,11 @@ import org.json.JSONObject;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.example.orderingapp.R;
 
 public class TCPCommunicator {
 	private static TCPCommunicator uniqInstance;

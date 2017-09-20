@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
@@ -50,50 +49,62 @@
 
     </LinearLayout>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="horizontal">
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <LinearLayout
             android:id="@+id/LayoutMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="6dp"
-            android:visibility="visible">
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:visibility="visible"
+            android:background="@drawable/menu_left_button">
 
 
             <Button
                 android:id="@+id/leftButton1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:onClick="someButtonClicked"
                 android:text="@string/LeftMenuBtn1"
-                android:background="@drawable/menu_left_button"/>
+                style="@style/left_menu_button"/>
 
             <Button
                 android:id="@+id/leftButton2"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:gravity="center"
-                android:onClick="someButtonClicked"
-                android:background="@drawable/menu_left_button"
-                android:text="@string/LeftMenuBtn2" />
+                android:text="@string/LeftMenuBtn2"
+                style="@style/left_menu_button"/>
 
             <Button
                 android:id="@+id/leftButton3"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:gravity="center"
-                android:onClick="someButtonClicked"
-                android:background="@drawable/menu_left_button"
-                android:text="@string/LeftMenuBtn3" />
+                android:text="@string/LeftMenuBtn3"
+                style="@style/left_menu_button" />
+
+            <Button
+                android:id="@+id/leftButton4"
+                android:text="@string/LeftMenuBtn4"
+                style="@style/left_menu_button" />
+
+            <Button
+                android:id="@+id/leftButton5"
+                android:text="@string/LeftMenuBtn5"
+                style="@style/left_menu_button" />
+
+            <Button
+                android:id="@+id/leftButton6"
+                android:text="@string/LeftMenuBtn6"
+                style="@style/left_menu_button" />
+
+            <Button
+                android:id="@+id/leftButton7"
+                android:text="@string/LeftMenuBtn7"
+                style="@style/left_menu_button" />
         </LinearLayout>
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/LayoutSettings"
+        <LinearLayout
+            android:id="@+id/LayoutMenu1"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:gravity="center_horizontal"
@@ -141,18 +152,123 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/LayoutClients"
+            android:id="@+id/LayoutMenu2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:visibility="gone">
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/titleMenu2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="@string/TitleMenu2"
+                style="@style/menu_title_text"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutMenu3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/titleMenu3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/TitleMenu3"
+                style="@style/menu_title_text"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutMenu4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/titleMenu4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/TitleMenu4"
+                style="@style/menu_title_text"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutMenu5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/titleMenu5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/TitleMenu5"
+                style="@style/menu_title_text"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutMenu6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/titleMenu6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/TitleMenu6"
+                style="@style/menu_title_text"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutMenu7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/titleMenu7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/TitleMenu7"
+                style="@style/menu_title_text" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/workarea7_item1_name"
+                        style="@style/workarea_item_name"/>
+                    <TextView
+                        android:id="@+id/workarea7Item1Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.0.0.0"
+                        style="@style/workarea_item_value"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
