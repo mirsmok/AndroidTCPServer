@@ -49,59 +49,10 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="horizontal">
-
-        <LinearLayout
-            android:id="@+id/LayoutMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:visibility="visible"
-            android:background="@drawable/menu_left_button">
-
-
-            <Button
-                android:id="@+id/leftButton1"
-                android:text="@string/LeftMenuBtn1"
-                style="@style/left_menu_button"/>
-
-            <Button
-                android:id="@+id/leftButton2"
-                android:text="@string/LeftMenuBtn2"
-                style="@style/left_menu_button"/>
-
-            <Button
-                android:id="@+id/leftButton3"
-                android:text="@string/LeftMenuBtn3"
-                style="@style/left_menu_button" />
-
-            <Button
-                android:id="@+id/leftButton4"
-                android:text="@string/LeftMenuBtn4"
-                style="@style/left_menu_button" />
-
-            <Button
-                android:id="@+id/leftButton5"
-                android:text="@string/LeftMenuBtn5"
-                style="@style/left_menu_button" />
-
-            <Button
-                android:id="@+id/leftButton6"
-                android:text="@string/LeftMenuBtn6"
-                style="@style/left_menu_button" />
-
-            <Button
-                android:id="@+id/leftButton7"
-                android:text="@string/LeftMenuBtn7"
-                style="@style/left_menu_button" />
-        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/LayoutMenu1"
@@ -270,5 +221,54 @@
 
             </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/LayoutMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:visibility="visible"
+            android:background="@drawable/menu_left_button">
+
+
+            <Button
+                android:id="@+id/leftButton1"
+                android:text="@string/LeftMenuBtn1"
+                style="@style/left_menu_button"/>
+
+            <Button
+                android:id="@+id/leftButton2"
+                android:text="@string/LeftMenuBtn2"
+                style="@style/left_menu_button"/>
+
+            <Button
+                android:id="@+id/leftButton3"
+                android:text="@string/LeftMenuBtn3"
+                style="@style/left_menu_button" />
+
+            <Button
+                android:id="@+id/leftButton4"
+                android:text="@string/LeftMenuBtn4"
+                style="@style/left_menu_button" />
+
+            <Button
+                android:id="@+id/leftButton5"
+                android:text="@string/LeftMenuBtn5"
+                style="@style/left_menu_button" />
+
+            <Button
+                android:id="@+id/leftButton6"
+                android:text="@string/LeftMenuBtn6"
+                style="@style/left_menu_button" />
+
+            <Button
+                android:id="@+id/leftButton7"
+                android:text="@string/LeftMenuBtn7"
+                style="@style/left_menu_button" />
+        </LinearLayout>
+
+    </RelativeLayout>
 </LinearLayout>

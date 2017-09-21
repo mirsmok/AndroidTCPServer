@@ -10,11 +10,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.example.android_tcp_server.EnumsAndStatics.MessageTypes;
 import com.example.orderingapp.R;
 
-public class MainActivity extends Activity implements OnTCPMessageRecievedListener{
+public class MainActivity extends Activity implements OnTCPMessageRecievedListener {
 
 	private Handler handler = new Handler();
 	@Override
@@ -39,7 +40,7 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
     protected void onResume()
     {
     	super.onResume();
-        setContentView(R.layout.main_activity_layout);
+        //setContentView(R.layout.main_activity_layout);
     }
     
     public void someButtonClicked(View view)
@@ -237,6 +238,33 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 		});
 
 		
+	}
+	public void ModyfyView(int Action, String Str){
+
+	//	switch (Action) {
+	//		case 1: //
+	//		TextView TmpTextView = (TextView) findViewById(R.id.workarea7Item1Value);
+	//		TmpTextView.setText(Str);
+	//	}
+
+		final String Text=Str;
+		handler.post(new Runnable() {
+
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				try
+				{
+					TextView TmpTextView= (TextView) findViewById(R.id.workarea7Item1Value);
+					TmpTextView.setText(Text);
+				}
+				catch(Exception e)
+				{
+					e.printStackTrace();
+				}
+			}
+		});
+
 	}
 
 }

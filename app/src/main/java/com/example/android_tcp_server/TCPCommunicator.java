@@ -19,14 +19,18 @@ import java.util.List;
 
 import org.json.JSONObject;
 
+import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
 import android.os.Handler;
+import android.text.format.Formatter;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.orderingapp.R;
+
+import static android.content.Context.WIFI_SERVICE;
 
 public class TCPCommunicator {
 	private static TCPCommunicator uniqInstance;
@@ -139,7 +143,26 @@ public class TCPCommunicator {
                 e.printStackTrace();
             }
             Socket socket = null;
-            while (true) {
+			//*********************send to UI servers IP***********************
+			try {
+					final String finalMessage=ss.getInetAddress().toString();
+				//WifiManager wm = (WifiManager) getSystemService(WIFI_SERVICE);
+			//	String ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
+					handler.post(new Runnable() {
+
+						@Override
+						public void run() {
+							// TODO Auto-generated method stub
+							for(OnTCPMessageRecievedListener listener:allListeners)
+								listener.ModyfyView(10,finalMessage);
+						}
+					});
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			//********************************************************
+		    while (true) {
                 try {
                     socket = ss.accept();
                 } catch (IOException e) {
