@@ -3,17 +3,24 @@ package com.example.android_tcp_server;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.content.Context;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.format.Formatter;
 import android.view.Menu;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.android_tcp_server.EnumsAndStatics.MessageTypes;
 import com.example.orderingapp.R;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 public class MainActivity extends Activity implements OnTCPMessageRecievedListener {
 
@@ -22,10 +29,16 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_activity_layout);
-		
     	TCPCommunicator writer =TCPCommunicator.getInstance();
     	TCPCommunicator.addListener(this);
     	writer.init(1500);
+		//ustawienie adresu ip servera
+        WifiManager wm = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+		@SuppressWarnings("deprecation")
+        String ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
+        TextView TmpTextView= (TextView) findViewById(R.id.workarea7Item1Value);
+        TmpTextView.setText(ip);
+		//ReadXMLString xmlReader= new ReadXMLString();
 
 	}
 
@@ -59,7 +72,7 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
                     @Override
                     public void run() {
                         // TODO Auto-generated method stub
-                        TCPCommunicator.writeToSocket(jsonReadyForSend);
+                        TCPCommunicator.writeToSocket(0,jsonReadyForSend);
                     }
                 });
 
@@ -239,32 +252,63 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 
 		
 	}
-	public void ModyfyView(int Action, String Str){
+	public void ModyfyView(int clientId, String Str) {
 
-	//	switch (Action) {
-	//		case 1: //
-	//		TextView TmpTextView = (TextView) findViewById(R.id.workarea7Item1Value);
-	//		TmpTextView.setText(Str);
-	//	}
-
-		final String Text=Str;
-		handler.post(new Runnable() {
-
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				try
-				{
-					TextView TmpTextView= (TextView) findViewById(R.id.workarea7Item1Value);
-					TmpTextView.setText(Text);
+		final String Text = Str;
+		ReadXMLString xmlReader= new ReadXMLString();
+		HashMap<String, String> dataFromClient = xmlReader.readXMLString(Str);
+		if(dataFromClient == null ) return;
+		switch (clientId) {
+			case 1: //
+				LinearLayout tmpLayoutMenu4=(LinearLayout) findViewById(R.id.LayoutMenu4);
+				///LayoutParams lparams = new LayoutParams(
+				//		LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+				TextView tv=new TextView(this);
+				tv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+						LinearLayout.LayoutParams.WRAP_CONTENT));
+				tmpLayoutMenu4.addView(tv);
+				//dane z hashmap
+				String viewText= new String();
+				Set set = dataFromClient.entrySet();
+				Iterator iterator = set.iterator();
+				while(iterator.hasNext()) {
+					Map.Entry mentry = (Map.Entry)iterator.next();
+					viewText+="key: "+ mentry.getKey() + " & Value: "+ mentry.getValue()+"\n";
 				}
-				catch(Exception e)
-				{
-					e.printStackTrace();
-				}
-			}
-		});
+				tv.setText(viewText);
+				handler.post(new Runnable() {
 
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						try {
+							TextView TmpTextView = (TextView) findViewById(R.id.workarea7Item1Value);
+							TmpTextView.setText("Client 1:"+Text);
+							//dynamiczne tworzenie nowych elemetnow
+
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+
+					}
+				});
+				break;
+			case 2: //
+				handler.post(new Runnable() {
+
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+						try {
+							TextView TmpTextView = (TextView) findViewById(R.id.workarea7Item1Value);
+							TmpTextView.setText("Client 2:"+Text);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+
+					}
+				});
+				break;
+		}
 	}
-
 }

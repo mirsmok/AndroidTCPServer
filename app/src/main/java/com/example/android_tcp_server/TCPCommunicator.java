@@ -35,11 +35,12 @@ import static android.content.Context.WIFI_SERVICE;
 public class TCPCommunicator {
 	private static TCPCommunicator uniqInstance;
 	private static int serverPort;
+	private static int NoClients;
 	private static List<OnTCPMessageRecievedListener> allListeners;
 	private static ServerSocket ss;
 	private static Socket s;
-	private static BufferedReader in;
-	private static BufferedWriter out;
+	private static List<BufferedReader> in= new ArrayList<BufferedReader>();
+	private static List<BufferedWriter> out=new ArrayList<BufferedWriter>();
 	private static OutputStream outputStream;
 	private static Handler handler = new Handler();
 	private TCPCommunicator()
@@ -62,12 +63,16 @@ public class TCPCommunicator {
 		return TCPWriterErrors.OK;
 //		}
 	}
-	public static  TCPWriterErrors writeToSocket(JSONObject obj)
+	public static int GetNoClients()
+	{
+		return NoClients;
+	}
+	public static  TCPWriterErrors writeToSocket(int index,JSONObject obj)
 	{
 		try
 		{
-		out.write(obj.toString() + System.getProperty("line.separator"));
-		out.flush();
+		out.get(index).write(obj.toString() + System.getProperty("line.separator"));
+		out.get(index).flush();
 		}
 		catch(Exception e)
 		{
@@ -143,33 +148,18 @@ public class TCPCommunicator {
                 e.printStackTrace();
             }
             Socket socket = null;
-			//*********************send to UI servers IP***********************
-			try {
-					final String finalMessage=ss.getInetAddress().toString();
-				//WifiManager wm = (WifiManager) getSystemService(WIFI_SERVICE);
-			//	String ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
-					handler.post(new Runnable() {
-
-						@Override
-						public void run() {
-							// TODO Auto-generated method stub
-							for(OnTCPMessageRecievedListener listener:allListeners)
-								listener.ModyfyView(10,finalMessage);
-						}
-					});
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			//********************************************************
 		    while (true) {
                 try {
+
                     socket = ss.accept();
+					NoClients++;
+					in.add(new BufferedReader(new InputStreamReader(socket.getInputStream())));
+					out.add(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())));
                 } catch (IOException e) {
                     System.out.println("I/O error: " + e);
                 }
                 // new thread for a client
-                new EchoThread(socket).start();
+                new EchoThread(socket,NoClients).start();
             }
 
         }
@@ -178,9 +168,11 @@ public class TCPCommunicator {
 
 	public class EchoThread extends Thread {
 		protected Socket socket;
+		protected int socketId;
 
-		public EchoThread(Socket clientSocket) {
+		public EchoThread(Socket clientSocket, int socketId) {
 			this.socket = clientSocket;
+			this.socketId=socketId;
 		}
 
 		public void run() {
@@ -208,10 +200,10 @@ public class TCPCommunicator {
                             @Override
                             public void run() {
                                 // TODO Auto-generated method stub
-                                for(OnTCPMessageRecievedListener listener:allListeners)
-
-
-                                    listener.onTCPMessageRecieved(finalMessage);
+                                for(OnTCPMessageRecievedListener listener:allListeners) {
+									listener.onTCPMessageRecieved(finalMessage);
+									listener.ModyfyView(socketId,finalMessage);
+								}
                                 Log.e("TCP", finalMessage);
                             }
                         });
@@ -232,8 +224,10 @@ public class TCPCommunicator {
 		{
 			s.close();
 			ss.close();
-			out.close();
-			in.close();
+			for(BufferedReader inb : in )
+				inb.close();
+			for(BufferedWriter outb : out)
+				outb.close();
 		}
 		catch(Exception e)
 		{
