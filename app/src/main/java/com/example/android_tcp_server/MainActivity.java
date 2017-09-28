@@ -10,9 +10,11 @@ import android.os.Handler;
 import android.text.format.Formatter;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.android_tcp_server.EnumsAndStatics.MessageTypes;
 import com.example.orderingapp.R;
@@ -257,25 +259,41 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 		final String Text = Str;
 		ReadXMLString xmlReader= new ReadXMLString();
 		HashMap<String, String> dataFromClient = xmlReader.readXMLString(Str);
-		if(dataFromClient == null ) return;
-		switch (clientId) {
-			case 1: //
-				LinearLayout tmpLayoutMenu4=(LinearLayout) findViewById(R.id.LayoutMenu4);
-				///LayoutParams lparams = new LayoutParams(
-				//		LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-				TextView tv=new TextView(this);
+		if((dataFromClient != null)&&(dataFromClient.get("id")!=null) ) {
+			//switch (clientId) {
+			//	case 1: //
+			TextView tv = new TextView(this);
+			///LayoutParams lparams = new LayoutParams(
+			//		LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+			if (findViewById(Integer.parseInt( dataFromClient.get("id")))==null) {
+				LinearLayout tmpLayoutMenu4 = (LinearLayout) findViewById(R.id.LayoutMenu4);
 				tv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
 						LinearLayout.LayoutParams.WRAP_CONTENT));
+				tv.setId(Integer.parseInt(dataFromClient.get("id")));
 				tmpLayoutMenu4.addView(tv);
-				//dane z hashmap
-				String viewText= new String();
-				Set set = dataFromClient.entrySet();
-				Iterator iterator = set.iterator();
-				while(iterator.hasNext()) {
-					Map.Entry mentry = (Map.Entry)iterator.next();
-					viewText+="key: "+ mentry.getKey() + " & Value: "+ mentry.getValue()+"\n";
-				}
-				tv.setText(viewText);
+			}
+			else{
+				tv = (TextView) findViewById(Integer.parseInt( dataFromClient.get("id")));
+			}
+			//dane z hashmap
+			String viewText = new String();
+			Set set = dataFromClient.entrySet();
+			Iterator iterator = set.iterator();
+			while (iterator.hasNext()) {
+				Map.Entry mentry = (Map.Entry) iterator.next();
+				viewText += mentry.getKey() + " : " + mentry.getValue() + "\n";
+			}
+			tv.setText(viewText);
+		}
+		else{
+			String toastText=new String();
+			if(dataFromClient==null)
+				toastText="Nieprawidłowa struktura XML";
+			else
+				toastText="Brak id w strukturze XML";
+			Toast toast =Toast.makeText(getApplicationContext(), toastText, Toast.LENGTH_LONG);
+			toast.show();
+		}
 				handler.post(new Runnable() {
 
 					@Override
@@ -292,23 +310,5 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 
 					}
 				});
-				break;
-			case 2: //
-				handler.post(new Runnable() {
-
-					@Override
-					public void run() {
-						// TODO Auto-generated method stub
-						try {
-							TextView TmpTextView = (TextView) findViewById(R.id.workarea7Item1Value);
-							TmpTextView.setText("Client 2:"+Text);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-
-					}
-				});
-				break;
-		}
 	}
 }
