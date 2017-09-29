@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="830f6eb6-3558-4148-8fe7-34c24e82b388" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/example/android_tcp_server/MainActivity$4.class" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../ideas/wlan debug" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/../.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/../.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/../.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
@@ -19,13 +19,22 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/example/android_tcp_server/MainActivity$2.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/example/android_tcp_server/MainActivity$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/example/android_tcp_server/MainActivity$3.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/example/android_tcp_server/MainActivity$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/example/android_tcp_server/MainActivity.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/example/android_tcp_server/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/example/android_tcp_server/TCPCommunicator$EchoThread$1.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/example/android_tcp_server/TCPCommunicator$EchoThread$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/example/android_tcp_server/TCPCommunicator$EchoThread.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/example/android_tcp_server/TCPCommunicator$EchoThread.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/classes/debug/com/example/android_tcp_server/TCPCommunicator.class" afterPath="$PROJECT_DIR$/build/intermediates/classes/debug/com/example/android_tcp_server/TCPCommunicator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental/packageDebug/zip-cache/uWHmVH87B0cuEAEZy9ACDBYDHos=" afterPath="$PROJECT_DIR$/build/intermediates/incremental/packageDebug/zip-cache/uWHmVH87B0cuEAEZy9ACDBYDHos=" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/debug_578f96b936c3a1f841cb81da859ac105a613eaee.jar" afterPath="$PROJECT_DIR$/build/intermediates/pre-dexed/debug/debug_578f96b936c3a1f841cb81da859ac105a613eaee.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/build/intermediates/res/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex" afterPath="$PROJECT_DIR$/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/build/outputs/apk/app-debug.apk" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.iml" afterPath="$PROJECT_DIR$/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/main_activity_layout.xml" afterPath="$PROJECT_DIR$/build/intermediates/res/merged/debug/layout/main_activity_layout.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/MainActivity.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/TCPCommunicator.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/TCPCommunicator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/res/layout/main_activity_layout.xml" afterPath="$PROJECT_DIR$/src/main/res/layout/main_activity_layout.xml" />
     </list>
     <ignored path="app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,11 +66,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="307" column="48" selection-start-line="307" selection-start-column="48" selection-end-line="307" selection-end-column="48" />
+            <state relative-caret-position="472">
+              <caret line="271" column="50" selection-start-line="271" selection-start-column="50" selection-end-line="271" selection-end-column="50" />
               <folding>
                 <element signature="method#someButtonClicked#0;class#MainActivity#0" expanded="false" />
               </folding>
@@ -69,94 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Looper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Android/Sdk/sources/android-19/android/os/Looper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="279" column="7" selection-start-line="279" selection-start-column="7" selection-end-line="279" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TextView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Android/Sdk/sources/android-19/android/widget/TextView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="698" column="0" selection-start-line="698" selection-start-column="0" selection-end-line="698" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TCPCommunicator.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TCPCommunicator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/TCPCommunicator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2040">
-              <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sites" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../ideas/sites">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="20" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="72" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReadXMLString.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/ReadXMLString.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#506#522#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DocumentBuilderFactoryImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Android/Sdk/sources/android-19/org/apache/harmony/xml/parsers/DocumentBuilderFactoryImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gradle-wrapper.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="261">
+              <caret line="208" column="79" selection-start-line="208" selection-start-column="79" selection-end-line="208" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -1857,18 +1783,19 @@
         <option value="$PROJECT_DIR$/src/main/res/drawable-xxhdpi/menuLeft_button.xml" />
         <option value="$PROJECT_DIR$/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/main_activity_layout.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/ModyfyView.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/OnTCPMessageRecievedListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/ModyfyViewListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/TCPCommunicator.java" />
         <option value="$APPLICATION_HOME_DIR$/jre/jre/lib/rt.jar!/java/sql/Array.class" />
         <option value="$PROJECT_DIR$/../ideas/sites" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/XmlRead.java" />
         <option value="$PROJECT_DIR$/../build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/ReadXMLFile.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/ReadXMLString.java" />
+        <option value="$PROJECT_DIR$/../ideas/wlan debug" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/main_activity_layout.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/TCPCommunicator.java" />
       </list>
     </option>
   </component>
@@ -1903,8 +1830,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView">
+        <subPane />
+      </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2025,36 +1955,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidTCPServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidTCPServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -2065,15 +1965,12 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="AndroidView">
-        <subPane />
-      </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/xmlprojector-1.4.13.jar" />
-    <property name="device.picker.selection" value="CB512EM6TL" />
+    <property name="device.picker.selection" value="192.168.1.6:5555" />
     <property name="settings.editor.selected.configurable" value="coverage" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="android.project.structure.last.selected" value="app" />
@@ -2415,17 +2312,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-1" width="1826" height="981" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32848486" sideWeight="0.49100113" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32848486" sideWeight="0.4865017" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32969698" sideWeight="0.38751405" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32848486" sideWeight="0.5134983" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295838" sideWeight="0.49576783" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3018182" sideWeight="0.49775028" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32969698" sideWeight="0.61248595" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969698" sideWeight="0.6096738" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969698" sideWeight="0.49775028" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24971879" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2435,7 +2333,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24971879" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295838" sideWeight="0.50423217" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.69910014" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.696288" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2443,7 +2341,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295838" sideWeight="0.49576783" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -2478,33 +2375,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/MainActivity.java</url>
-          <line>264</line>
-          <properties />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/MainActivity.java</url>
-          <line>258</line>
-          <properties />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="13" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/OnTCPMessageRecievedListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/TCPCommunicator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2677,13 +2552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/drawable-xxhdpi/menu_button.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/drawable-xxhdpi/menu_left_button.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2700,13 +2568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="78" column="36" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -2775,7 +2636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2783,7 +2643,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2791,7 +2650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2807,6 +2665,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ideas/wlan debug">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/ReadXMLString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2826,10 +2702,245 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-19/org/apache/harmony/xml/parsers/DocumentBuilderFactoryImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-19/android/widget/TextView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="698" column="0" selection-start-line="698" selection-start-column="0" selection-end-line="698" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#343571#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#24815#24816#0" expanded="false" />
+            <element signature="e#24850#24851#0" expanded="false" />
+            <element signature="e#56863#56864#0" expanded="false" />
+            <element signature="e#56891#56892#0" expanded="false" />
+            <element signature="e#57036#57037#0" expanded="false" />
+            <element signature="e#57063#57064#0" expanded="false" />
+            <element signature="e#57601#57602#0" expanded="false" />
+            <element signature="e#57629#57630#0" expanded="false" />
+            <element signature="e#57751#57752#0" expanded="false" />
+            <element signature="e#57788#57789#0" expanded="false" />
+            <element signature="e#58675#58676#0" expanded="false" />
+            <element signature="e#58705#58706#0" expanded="false" />
+            <element signature="e#58863#58864#0" expanded="false" />
+            <element signature="e#58897#58898#0" expanded="false" />
+            <element signature="e#64036#64037#0" expanded="false" />
+            <element signature="e#64068#64069#0" expanded="false" />
+            <element signature="e#65855#65856#0" expanded="false" />
+            <element signature="e#65893#65894#0" expanded="false" />
+            <element signature="e#71979#71980#0" expanded="false" />
+            <element signature="e#72026#72027#0" expanded="false" />
+            <element signature="e#72179#72180#0" expanded="false" />
+            <element signature="e#72227#72228#0" expanded="false" />
+            <element signature="e#72380#72381#0" expanded="false" />
+            <element signature="e#72428#72429#0" expanded="false" />
+            <element signature="e#72575#72576#0" expanded="false" />
+            <element signature="e#72621#72622#0" expanded="false" />
+            <element signature="e#72877#72878#0" expanded="false" />
+            <element signature="e#72949#72950#0" expanded="false" />
+            <element signature="e#91218#91219#0" expanded="false" />
+            <element signature="e#91254#91255#0" expanded="false" />
+            <element signature="e#94470#94471#0" expanded="false" />
+            <element signature="e#94519#94520#0" expanded="false" />
+            <element signature="e#94960#94961#0" expanded="false" />
+            <element signature="e#95008#95009#0" expanded="false" />
+            <element signature="e#95188#95189#0" expanded="false" />
+            <element signature="e#95235#95236#0" expanded="false" />
+            <element signature="e#95630#95631#0" expanded="false" />
+            <element signature="e#95691#95692#0" expanded="false" />
+            <element signature="e#96792#96793#0" expanded="false" />
+            <element signature="e#96841#96842#0" expanded="false" />
+            <element signature="e#98527#98528#0" expanded="false" />
+            <element signature="e#98574#98575#0" expanded="false" />
+            <element signature="e#99776#99777#0" expanded="false" />
+            <element signature="e#99809#99810#0" expanded="false" />
+            <element signature="e#99990#99991#0" expanded="false" />
+            <element signature="e#100026#100027#0" expanded="false" />
+            <element signature="e#100616#100617#0" expanded="false" />
+            <element signature="e#100654#100655#0" expanded="false" />
+            <element signature="e#102377#102378#0" expanded="false" />
+            <element signature="e#102413#102414#0" expanded="false" />
+            <element signature="e#102643#102644#0" expanded="false" />
+            <element signature="e#102675#102676#0" expanded="false" />
+            <element signature="e#102903#102904#0" expanded="false" />
+            <element signature="e#102935#102936#0" expanded="false" />
+            <element signature="e#103157#103158#0" expanded="false" />
+            <element signature="e#103202#103203#0" expanded="false" />
+            <element signature="e#103389#103390#0" expanded="false" />
+            <element signature="e#103422#103423#0" expanded="false" />
+            <element signature="e#103732#103733#0" expanded="false" />
+            <element signature="e#103768#103769#0" expanded="false" />
+            <element signature="e#104184#104185#0" expanded="false" />
+            <element signature="e#104225#104226#0" expanded="false" />
+            <element signature="e#104594#104595#0" expanded="false" />
+            <element signature="e#104632#104633#0" expanded="false" />
+            <element signature="e#106506#106507#0" expanded="false" />
+            <element signature="e#106543#106544#0" expanded="false" />
+            <element signature="e#107983#107984#0" expanded="false" />
+            <element signature="e#108020#108021#0" expanded="false" />
+            <element signature="e#109583#109584#0" expanded="false" />
+            <element signature="e#109614#109615#0" expanded="false" />
+            <element signature="e#109761#109762#0" expanded="false" />
+            <element signature="e#109805#109806#0" expanded="false" />
+            <element signature="e#111143#111144#0" expanded="false" />
+            <element signature="e#111188#111189#0" expanded="false" />
+            <element signature="e#112016#112017#0" expanded="false" />
+            <element signature="e#112072#112073#0" expanded="false" />
+            <element signature="e#112836#112837#0" expanded="false" />
+            <element signature="e#112893#112894#0" expanded="false" />
+            <element signature="e#113630#113631#0" expanded="false" />
+            <element signature="e#113686#113687#0" expanded="false" />
+            <element signature="e#114534#114535#0" expanded="false" />
+            <element signature="e#114591#114592#0" expanded="false" />
+            <element signature="e#116331#116332#0" expanded="false" />
+            <element signature="e#116391#116392#0" expanded="false" />
+            <element signature="e#117075#117076#0" expanded="false" />
+            <element signature="e#117138#117139#0" expanded="false" />
+            <element signature="e#117811#117812#0" expanded="false" />
+            <element signature="e#117871#117872#0" expanded="false" />
+            <element signature="e#118554#118555#0" expanded="false" />
+            <element signature="e#118617#118618#0" expanded="false" />
+            <element signature="e#120636#120637#0" expanded="false" />
+            <element signature="e#120671#120672#0" expanded="false" />
+            <element signature="e#121027#121028#0" expanded="false" />
+            <element signature="e#121061#121062#0" expanded="false" />
+            <element signature="e#121297#121298#0" expanded="false" />
+            <element signature="e#121343#121344#0" expanded="false" />
+            <element signature="e#127466#127467#0" expanded="false" />
+            <element signature="e#127521#127522#0" expanded="false" />
+            <element signature="e#128306#128307#0" expanded="false" />
+            <element signature="e#128348#128349#0" expanded="false" />
+            <element signature="e#128614#128615#0" expanded="false" />
+            <element signature="e#128649#128650#0" expanded="false" />
+            <element signature="e#129836#129837#0" expanded="false" />
+            <element signature="e#129878#129879#0" expanded="false" />
+            <element signature="e#130222#130223#0" expanded="false" />
+            <element signature="e#130273#130274#0" expanded="false" />
+            <element signature="e#138510#138511#0" expanded="false" />
+            <element signature="e#138577#138578#0" expanded="false" />
+            <element signature="e#139740#139741#0" expanded="false" />
+            <element signature="e#139807#139808#0" expanded="false" />
+            <element signature="e#140043#140044#0" expanded="false" />
+            <element signature="e#140071#140072#0" expanded="false" />
+            <element signature="e#140101#140102#0" expanded="false" />
+            <element signature="e#140135#140136#0" expanded="false" />
+            <element signature="e#157927#157928#0" expanded="false" />
+            <element signature="e#157989#157990#0" expanded="false" />
+            <element signature="e#161841#161842#0" expanded="false" />
+            <element signature="e#161872#161873#0" expanded="false" />
+            <element signature="e#172093#172094#0" expanded="false" />
+            <element signature="e#172156#172157#0" expanded="false" />
+            <element signature="e#172396#172397#0" expanded="false" />
+            <element signature="e#172463#172464#0" expanded="false" />
+            <element signature="e#172523#172524#0" expanded="false" />
+            <element signature="e#172590#172591#0" expanded="false" />
+            <element signature="e#183438#183439#0" expanded="false" />
+            <element signature="e#183462#183463#0" expanded="false" />
+            <element signature="e#192886#192887#0" expanded="false" />
+            <element signature="e#192953#192954#0" expanded="false" />
+            <element signature="e#218358#218359#0" expanded="false" />
+            <element signature="e#218419#218420#0" expanded="false" />
+            <element signature="e#218453#218454#0" expanded="false" />
+            <element signature="e#218512#218513#0" expanded="false" />
+            <element signature="e#219492#219493#0" expanded="false" />
+            <element signature="e#219520#219521#0" expanded="false" />
+            <element signature="e#233758#233759#0" expanded="false" />
+            <element signature="e#233821#233822#0" expanded="false" />
+            <element signature="e#235435#235436#0" expanded="false" />
+            <element signature="e#235469#235470#0" expanded="false" />
+            <element signature="e#260374#260375#0" expanded="false" />
+            <element signature="e#260432#260433#0" expanded="false" />
+            <element signature="e#261509#261510#0" expanded="false" />
+            <element signature="e#261570#261571#0" expanded="false" />
+            <element signature="e#261731#261732#0" expanded="false" />
+            <element signature="e#261790#261791#0" expanded="false" />
+            <element signature="e#262344#262345#0" expanded="false" />
+            <element signature="e#262379#262380#0" expanded="false" />
+            <element signature="e#266520#266521#0" expanded="false" />
+            <element signature="e#266570#266571#0" expanded="false" />
+            <element signature="e#266999#267000#0" expanded="false" />
+            <element signature="e#267041#267042#0" expanded="false" />
+            <element signature="e#267247#267248#0" expanded="false" />
+            <element signature="e#267280#267281#0" expanded="false" />
+            <element signature="e#289198#289199#0" expanded="false" />
+            <element signature="e#289267#289268#0" expanded="false" />
+            <element signature="e#289804#289805#0" expanded="false" />
+            <element signature="e#289833#289834#0" expanded="false" />
+            <element signature="e#301401#301402#0" expanded="false" />
+            <element signature="e#301465#301466#0" expanded="false" />
+            <element signature="e#316471#316472#0" expanded="false" />
+            <element signature="e#316520#316521#0" expanded="false" />
+            <element signature="e#329670#329671#0" expanded="false" />
+            <element signature="e#329712#329713#0" expanded="false" />
+            <element signature="e#329800#329801#0" expanded="false" />
+            <element signature="e#329827#329828#0" expanded="false" />
+            <element signature="e#329919#329920#0" expanded="false" />
+            <element signature="e#329959#329960#0" expanded="false" />
+            <element signature="e#331158#331159#0" expanded="false" />
+            <element signature="e#331199#331200#0" expanded="false" />
+            <element signature="e#332288#332289#0" expanded="false" />
+            <element signature="e#332345#332346#0" expanded="false" />
+            <element signature="e#332399#332400#0" expanded="false" />
+            <element signature="e#332458#332459#0" expanded="false" />
+            <element signature="e#333386#333387#0" expanded="false" />
+            <element signature="e#333424#333425#0" expanded="false" />
+            <element signature="e#333463#333464#0" expanded="false" />
+            <element signature="e#333514#333515#0" expanded="false" />
+            <element signature="e#333568#333569#0" expanded="false" />
+            <element signature="e#333634#333635#0" expanded="false" />
+            <element signature="e#340264#340265#0" expanded="false" />
+            <element signature="e#340307#340308#0" expanded="false" />
+            <element signature="e#340336#340337#0" expanded="false" />
+            <element signature="e#340374#340375#0" expanded="false" />
+            <element signature="e#340410#340411#0" expanded="false" />
+            <element signature="e#340455#340456#0" expanded="false" />
+            <element signature="e#340495#340496#0" expanded="false" />
+            <element signature="e#340546#340547#0" expanded="false" />
+            <element signature="e#340583#340584#0" expanded="false" />
+            <element signature="e#340665#340666#0" expanded="false" />
+            <element signature="e#340696#340697#0" expanded="false" />
+            <element signature="e#340753#340754#0" expanded="false" />
+            <element signature="e#340784#340785#0" expanded="false" />
+            <element signature="e#340841#340842#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/drawable-xxhdpi/menu_button.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-19/android/os/Looper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="278" column="0" selection-start-line="278" selection-start-column="0" selection-end-line="278" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="78" column="36" selection-start-line="78" selection-start-column="36" selection-end-line="78" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -2839,62 +2950,27 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1182">
-          <caret line="213" column="36" selection-start-line="213" selection-start-column="36" selection-end-line="213" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/TCPCommunicator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-19/android/widget/TextView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="698" column="0" selection-start-line="698" selection-start-column="0" selection-end-line="698" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-19/org/apache/harmony/xml/parsers/DocumentBuilderFactoryImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/ReadXMLString.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#506#522#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-19/android/os/Looper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="279" column="7" selection-start-line="279" selection-start-column="7" selection-end-line="279" selection-end-column="7" />
+        <state relative-caret-position="207">
+          <caret line="142" column="39" selection-start-line="142" selection-start-column="39" selection-end-line="142" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="307" column="48" selection-start-line="307" selection-start-column="48" selection-end-line="307" selection-end-column="48" />
+        <state relative-caret-position="472">
+          <caret line="271" column="50" selection-start-line="271" selection-start-column="50" selection-end-line="271" selection-end-column="50" />
           <folding>
             <element signature="method#someButtonClicked#0;class#MainActivity#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/android_tcp_server/TCPCommunicator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="208" column="79" selection-start-line="208" selection-start-column="79" selection-end-line="208" selection-end-column="79" />
+          <folding />
         </state>
       </provider>
     </entry>

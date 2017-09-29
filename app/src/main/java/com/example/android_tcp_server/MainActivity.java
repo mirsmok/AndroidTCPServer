@@ -4,10 +4,12 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.format.Formatter;
+import android.view.ContextThemeWrapper;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
@@ -260,28 +262,39 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 		ReadXMLString xmlReader= new ReadXMLString();
 		HashMap<String, String> dataFromClient = xmlReader.readXMLString(Str);
 		if((dataFromClient != null)&&(dataFromClient.get("id")!=null) ) {
-			//switch (clientId) {
-			//	case 1: //
-			TextView tv = new TextView(this);
-			///LayoutParams lparams = new LayoutParams(
-			//		LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+			LinearLayout tmpLinearLayout = new LinearLayout(new ContextThemeWrapper(this, R.style.left_menu_button), null, 0); //new LinearLayout(this);
 			if (findViewById(Integer.parseInt( dataFromClient.get("id")))==null) {
 				LinearLayout tmpLayoutMenu4 = (LinearLayout) findViewById(R.id.LayoutMenu4);
-				tv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+				tmpLinearLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
 						LinearLayout.LayoutParams.WRAP_CONTENT));
-				tv.setId(Integer.parseInt(dataFromClient.get("id")));
-				tmpLayoutMenu4.addView(tv);
+				tmpLinearLayout.setId(Integer.parseInt(dataFromClient.get("id")));
+				tmpLinearLayout.setOrientation(LinearLayout.VERTICAL);
+				tmpLinearLayout.setPadding(1,1,1,1);
+				tmpLayoutMenu4.addView(tmpLinearLayout);
 			}
 			else{
-				tv = (TextView) findViewById(Integer.parseInt( dataFromClient.get("id")));
+				tmpLinearLayout = (LinearLayout) findViewById(Integer.parseInt( dataFromClient.get("id")));
+				tmpLinearLayout.removeAllViews();
 			}
+			TextView tmpTitle = new TextView(this);
+			tmpTitle.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+					LinearLayout.LayoutParams.WRAP_CONTENT));
+			tmpTitle.setTextSize(30);
+			tmpTitle.setTextColor(Color.BLUE);
+			tmpTitle.setText("Device id: "+dataFromClient.get("id"));
+			tmpLinearLayout.addView(tmpTitle);
+			TextView tv = new TextView(this);
+			tv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+					LinearLayout.LayoutParams.WRAP_CONTENT));
+			tmpLinearLayout.addView(tv);
 			//dane z hashmap
 			String viewText = new String();
 			Set set = dataFromClient.entrySet();
 			Iterator iterator = set.iterator();
 			while (iterator.hasNext()) {
 				Map.Entry mentry = (Map.Entry) iterator.next();
-				viewText += mentry.getKey() + " : " + mentry.getValue() + "\n";
+				if(!mentry.getKey().toString().contentEquals("id"))
+					viewText += mentry.getKey() + " : " + mentry.getValue() + "\n";
 			}
 			tv.setText(viewText);
 		}

@@ -194,6 +194,10 @@ public class TCPCommunicator {
 						socket.close();
 						return;
 					} else {
+						line=line.toString().replace("</content>","");
+						String ip =socket.getInetAddress().toString();
+						ip=ip.replace("/","");
+						line+="<ip>"+ip+"</ip></content>";
                         final String finalMessage=line;
                         handler.post(new Runnable() {
 
