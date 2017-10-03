@@ -13,7 +13,9 @@ import java.net.NetworkInterface;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Enumeration;
 import java.util.List;
 
@@ -43,9 +45,17 @@ public class TCPCommunicator {
 	private static List<BufferedWriter> out=new ArrayList<BufferedWriter>();
 	private static OutputStream outputStream;
 	private static Handler handler = new Handler();
+	private static Boolean outputModuleState;
 	private TCPCommunicator()
 	{
 		allListeners = new ArrayList<OnTCPMessageRecievedListener>();
+		outputModuleState=false;
+	}
+	public static Boolean getOutputModuleState(){
+		return outputModuleState;
+	};
+	public static void  setOutputModuleState(Boolean state){
+		 outputModuleState=state;
 	}
 	public static TCPCommunicator getInstance()
 	{
@@ -195,6 +205,8 @@ public class TCPCommunicator {
 						return;
 					} else {
 						line=line.toString().replace("</content>","");
+						String currentDateandTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+						line+="<arriveTime>"+currentDateandTime+"</arriveTime>";
 						String ip =socket.getInetAddress().toString();
 						ip=ip.replace("/","");
 						line+="<ip>"+ip+"</ip></content>";
@@ -206,12 +218,13 @@ public class TCPCommunicator {
                                 // TODO Auto-generated method stub
                                 for(OnTCPMessageRecievedListener listener:allListeners) {
 									listener.onTCPMessageRecieved(finalMessage);
-									listener.ModyfyView(socketId,finalMessage);
+									listener.ModyfyView(socket,socketId,finalMessage);
 								}
                                 Log.e("TCP", finalMessage);
                             }
                         });
-                        out.writeBytes(line + "\n\r");
+                        //out.writeBytes(line + "\n\r");
+						out.writeBytes("<content><outputState>"+ (TCPCommunicator.getOutputModuleState() ? "ON" : "OFF")+"</outputState></content>");
 						out.flush();
 					}
 				} catch (IOException e) {

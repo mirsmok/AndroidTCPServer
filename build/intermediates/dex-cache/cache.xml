@@ -2,13 +2,22 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="/home/mirsmok/Android/Sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
-        jumboMode="false"
+        is-multidex="true"
+        jar="/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
-        <dex dex="/home/mirsmok/work/AndroidTCPServer/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0_8f711fa8e9953b04a2f1a36ed4a5d761d6fb64ce.jar" />
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_e4a09f9267c4c6e74d7459da9f7cd038158df077/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e5f026f0725a5d433e59a05ceaf8dd067aa52219">
+        <dex dex="/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_7e977a22d700bcb181878cf226d2c0a648a9aabc/classes.dex" />
     </item>
 
 </items>

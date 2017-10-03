@@ -1,4 +1,4 @@
-#Mon Sep 18 22:17:22 CEST 2017
+#Tue Oct 03 21:30:25 CEST 2017
 base.0=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1
 renamed.0=classes.dex
 file.0=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex

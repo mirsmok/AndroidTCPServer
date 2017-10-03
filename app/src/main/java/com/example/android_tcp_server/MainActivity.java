@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.example.android_tcp_server.EnumsAndStatics.MessageTypes;
 import com.example.orderingapp.R;
 
+import java.net.Socket;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -256,7 +257,7 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 
 		
 	}
-	public void ModyfyView(int clientId, String Str) {
+	public void ModyfyView(Socket clientSocket, int clientId, String Str) {
 
 		final String Text = Str;
 		ReadXMLString xmlReader= new ReadXMLString();
@@ -270,6 +271,7 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 				tmpLinearLayout.setId(Integer.parseInt(dataFromClient.get("id")));
 				tmpLinearLayout.setOrientation(LinearLayout.VERTICAL);
 				tmpLinearLayout.setPadding(1,1,1,1);
+				tmpLinearLayout.setBackgroundResource(R.drawable.device_layout_backgroun_blue);
 				tmpLayoutMenu4.addView(tmpLinearLayout);
 			}
 			else{
@@ -283,6 +285,23 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 			tmpTitle.setTextColor(Color.BLUE);
 			tmpTitle.setText("Device id: "+dataFromClient.get("id"));
 			tmpLinearLayout.addView(tmpTitle);
+			//adding onClick event
+			tmpLinearLayout.setClickable(true);
+			if (dataFromClient.get("dev_type").toString().equals("outputModule")) {
+				tmpLinearLayout.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						if (TCPCommunicator.getOutputModuleState()) {
+							v.setBackgroundResource(R.drawable.device_layout_backgroun_blue);
+							TCPCommunicator.setOutputModuleState(false);
+						} else {
+							v.setBackgroundResource(R.drawable.device_layout_backgroun_red);
+							TCPCommunicator.setOutputModuleState(true);
+						}
+						Toast.makeText(getApplicationContext(), "Clicked", Toast.LENGTH_SHORT).show();
+					}
+				});
+			}
 			TextView tv = new TextView(this);
 			tv.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
 					LinearLayout.LayoutParams.WRAP_CONTENT));

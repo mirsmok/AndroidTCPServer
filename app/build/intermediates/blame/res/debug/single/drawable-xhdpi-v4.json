@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/device_layout_backgroun_blue.xml",
+        "source": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/drawable-xhdpi/device_layout_backgroun_blue.xml"
+    },
+    {
+        "merged": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/device_layout_backgroun_red.xml",
+        "source": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/drawable-xhdpi/device_layout_backgroun_red.xml"
+    }
+]
