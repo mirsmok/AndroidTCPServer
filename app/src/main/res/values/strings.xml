@@ -19,6 +19,10 @@
     <string name="TitleMenu6">Statistics</string>
     <string name="TitleMenu7">Info</string>
 
+    <!-- workarea 1 Item names -->
+    <string name="workarea1_item1_name">Aktualna Temperatura</string>
+    <string name="workarea1_item2_name">Zadana Temperatura</string>
+    <string name="workarea1_item3_name">Temperatura Wody CO</string>
     <!-- workarea 7 Item names -->
     <string name="workarea7_item1_name">Adddress IP :</string>
 

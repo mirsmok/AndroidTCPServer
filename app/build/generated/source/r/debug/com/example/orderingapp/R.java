@@ -34,7 +34,6 @@ public final class R {
         public static final int LayoutMenu7=0x7f080010;
         public static final int action_settings=0x7f08001b;
         public static final int btnDisplayMenu=0x7f080000;
-        public static final int btnSendToClient=0x7f080004;
         public static final int leftButton1=0x7f080014;
         public static final int leftButton2=0x7f080015;
         public static final int leftButton3=0x7f080016;
@@ -49,8 +48,9 @@ public final class R {
         public static final int titleMenu5=0x7f08000d;
         public static final int titleMenu6=0x7f08000f;
         public static final int titleMenu7=0x7f080011;
-        public static final int txtContentToSend=0x7f080003;
-        public static final int txtInputFromClient=0x7f080005;
+        public static final int workarea1Item1Value=0x7f080003;
+        public static final int workarea1Item2Value=0x7f080004;
+        public static final int workarea1Item3Value=0x7f080005;
         public static final int workarea7Item1Value=0x7f080012;
     }
     public static final class layout {
@@ -78,7 +78,10 @@ public final class R {
         public static final int TitleMenu7=0x7f06000d;
         public static final int action_settings=0x7f06000e;
         public static final int app_name=0x7f06000f;
-        public static final int workarea7_item1_name=0x7f060010;
+        public static final int workarea1_item1_name=0x7f060010;
+        public static final int workarea1_item2_name=0x7f060011;
+        public static final int workarea1_item3_name=0x7f060012;
+        public static final int workarea7_item1_name=0x7f060013;
     }
     public static final class style {
         /**  API 11 theme customizations can go here. 

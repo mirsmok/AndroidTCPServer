@@ -60,46 +60,64 @@
             android:layout_height="fill_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:visibility="gone">
-
-            <LinearLayout
+            android:visibility="visible"
+            android:paddingTop="30dp">
+            <TableLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:text="enter text:"
-                    android:textSize="14sp" />
+                <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
 
-                <EditText
-                    android:id="@+id/txtContentToSend"
-                    android:layout_width="150dp"
-                    android:layout_height="40dp" />
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/workarea1_item1_name"
+                        style="@style/workarea_item_name"/>
+                    <EditText
+                        android:id="@+id/workarea1Item1Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="23.4"
+                        style="@style/workarea_item_value"
+                        android:inputType="none"
+                        android:editable="false"/>
 
-            <Button
-                android:id="@+id/btnSendToClient"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:onClick="someButtonClicked"
-                android:text="Send" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/workarea1_item2_name"
+                        style="@style/workarea_item_name"/>
+                    <EditText
+                        android:id="@+id/workarea1Item2Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="22.0"
+                        style="@style/workarea_item_value"
+                        android:inputType="numberDecimal"/>
+                </TableRow>
+                <TableRow>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="178dp"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/workarea1_item3_name"
+                        style="@style/workarea_item_name"/>
+                    <EditText
+                        android:id="@+id/workarea1Item3Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="60.0"
+                        style="@style/workarea_item_value"
+                        android:inputType="none"
+                        android:editable="false"/>
+                </TableRow>
+            </TableLayout>
 
-                <EditText
-                    android:id="@+id/txtInputFromClient"
-                    android:layout_width="200dp"
-                    android:layout_height="198dp" />
 
-            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -189,7 +207,7 @@
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/titleMenu7"
@@ -231,7 +249,7 @@
             android:paddingRight="10dp"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
-            android:visibility="visible"
+            android:visibility="gone"
             android:background="@drawable/menu_left_button">
 
 

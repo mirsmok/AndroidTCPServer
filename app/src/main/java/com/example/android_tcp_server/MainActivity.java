@@ -65,7 +65,7 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
     {
     	JSONObject obj = new JSONObject();
     	try {
-            if (view.getId() == R.id.btnSendToClient) {
+            /*if (view.getId() == R.id.btnSendToClient) {
                 obj.put(EnumsAndStatics.MESSAGE_TYPE_FOR_JSON, MessageTypes.MessageFromServer);
                 EditText txtContent = (EditText) findViewById(R.id.txtContentToSend);
                 obj.put(EnumsAndStatics.MESSAGE_CONTENT_FOR_JSON, txtContent.getText().toString());
@@ -82,7 +82,7 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
                 });
 
                 thread.start();
-            }
+            }*/
             if(view.getId()==R.id.leftButton1)
             {
                 LinearLayout TmpLayoutMenu1 = (LinearLayout) findViewById(R.id.LayoutMenu1);
@@ -245,8 +245,8 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 				// TODO Auto-generated method stub
 				try
 				{
-				EditText editTxt = (EditText)findViewById(R.id.txtInputFromClient);
-				editTxt.setText(theMessage);
+				//EditText editTxt = (EditText)findViewById(R.id.txtInputFromClient);
+				//editTxt.setText(theMessage);
 				}
 				catch(Exception e)
 				{
