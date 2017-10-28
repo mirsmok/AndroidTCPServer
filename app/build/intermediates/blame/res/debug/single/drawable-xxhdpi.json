@@ -4,6 +4,14 @@
         "source": "/home/mirsmok/AndroidStudioProjects/AndroidTCPServer/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
     },
     {
+        "merged": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/merged/debug/drawable-xxhdpi/plomien_on.png",
+        "source": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/drawable-xxhdpi/plomien_on.png"
+    },
+    {
+        "merged": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/merged/debug/drawable-xxhdpi/plomien_off.png",
+        "source": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/drawable-xxhdpi/plomien_off.png"
+    },
+    {
         "merged": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_launcher.png",
         "source": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/drawable-xxhdpi/ic_launcher.png"
     },

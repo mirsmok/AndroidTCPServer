@@ -4,16 +4,20 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Context;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.format.Formatter;
 import android.view.ContextThemeWrapper;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +34,7 @@ import java.util.Set;
 public class MainActivity extends Activity implements OnTCPMessageRecievedListener {
 
 	private Handler handler = new Handler();
+	private DatabaseHandler db = new DatabaseHandler(this);
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -43,8 +48,19 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
         String ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
         TextView TmpTextView= (TextView) findViewById(R.id.workarea7Item1Value);
         TmpTextView.setText(ip);
-		//ReadXMLString xmlReader= new ReadXMLString();
-
+		// database part
+		db.initHeating();
+		TmpTextView = (TextView)  findViewById(R.id.workarea1Item2Value);
+		TmpTextView.setText(db.getHeatingData("setpoint"));
+		//przypisanie metody update wartosci w bazie
+		TmpTextView.setOnEditorActionListener(
+				new EditText.OnEditorActionListener() {
+					@Override
+					public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+						db.setHeatingData("setpoint",v.getText().toString());
+						return false;
+					}
+				});
 	}
 
 	@Override
@@ -260,6 +276,8 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 	public void ModyfyView(Socket clientSocket, int clientId, String Str) {
 
 		final String Text = Str;
+		String actualTemperature= new String("");
+        String waterLoopTemperature=new String("");
 		ReadXMLString xmlReader= new ReadXMLString();
 		HashMap<String, String> dataFromClient = xmlReader.readXMLString(Str);
 		if((dataFromClient != null)&&(dataFromClient.get("id")!=null) ) {
@@ -316,6 +334,22 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 					viewText += mentry.getKey() + " : " + mentry.getValue() + "\n";
 			}
 			tv.setText(viewText);
+		//central heatingx
+			if(dataFromClient.get("id").toString().equals(db.getHeatingData("processTemperatureId"))) {
+				actualTemperature = dataFromClient.get("sensorTemperature").toString();
+				String Setpoint = db.getHeatingData("setpoint");
+				if(actualTemperature.length()>=1 && Setpoint.length()>=1){
+					if(Float.parseFloat(actualTemperature) > Float.parseFloat(Setpoint))
+						TCPCommunicator.setOutputModuleState(false);
+					else
+						TCPCommunicator.setOutputModuleState(true);
+
+				}
+			}
+
+			if(dataFromClient.get("id").toString().equals(db.getHeatingData("waterLoopId")))
+				waterLoopTemperature= dataFromClient.get("sensorTemperature").toString();
+
 		}
 		else{
 			String toastText=new String();
@@ -326,6 +360,9 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 			Toast toast =Toast.makeText(getApplicationContext(), toastText, Toast.LENGTH_LONG);
 			toast.show();
 		}
+		final String actualTemperatureF=actualTemperature;
+		final String waterLoopTemperatureF=waterLoopTemperature;
+
 				handler.post(new Runnable() {
 
 					@Override
@@ -334,6 +371,19 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 						try {
 							TextView TmpTextView = (TextView) findViewById(R.id.workarea7Item1Value);
 							TmpTextView.setText("Client 1:"+Text);
+							if(actualTemperatureF.length()>=1) {
+								TmpTextView = (TextView) findViewById(R.id.workarea1Item1Value);
+								TmpTextView.setText(actualTemperatureF);
+							}
+							if(waterLoopTemperatureF.length()>=1) {
+								TmpTextView = (TextView) findViewById(R.id.workarea1Item3Value);
+								TmpTextView.setText(waterLoopTemperatureF);
+							}
+							ImageView TmpImageView = (ImageView) findViewById(R.id.workarea1Item4Image);
+							if(TCPCommunicator.getOutputModuleState())
+							    TmpImageView.setImageResource(R.drawable.plomien_on);
+                            else
+                                TmpImageView.setImageResource(R.drawable.plomien_off);
 							//dynamiczne tworzenie nowych elemetnow
 
 						} catch (Exception e) {
