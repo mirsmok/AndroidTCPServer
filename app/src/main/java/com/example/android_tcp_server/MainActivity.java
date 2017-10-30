@@ -25,6 +25,8 @@ import android.widget.Toast;
 import com.example.android_tcp_server.EnumsAndStatics.MessageTypes;
 import com.example.orderingapp.R;
 
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -282,18 +284,17 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 		HashMap<String, String> dataFromClient = xmlReader.readXMLString(Str);
 		if((dataFromClient != null)&&(dataFromClient.get("id")!=null) ) {
 			LinearLayout tmpLinearLayout = new LinearLayout(new ContextThemeWrapper(this, R.style.left_menu_button), null, 0); //new LinearLayout(this);
-			if (findViewById(Integer.parseInt( dataFromClient.get("id")))==null) {
+			if (findViewById(Integer.parseInt(dataFromClient.get("id"))) == null) {
 				LinearLayout tmpLayoutMenu4 = (LinearLayout) findViewById(R.id.LayoutMenu4);
 				tmpLinearLayout.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
 						LinearLayout.LayoutParams.WRAP_CONTENT));
 				tmpLinearLayout.setId(Integer.parseInt(dataFromClient.get("id")));
 				tmpLinearLayout.setOrientation(LinearLayout.VERTICAL);
-				tmpLinearLayout.setPadding(1,1,1,1);
+				tmpLinearLayout.setPadding(1, 1, 1, 1);
 				tmpLinearLayout.setBackgroundResource(R.drawable.device_layout_backgroun_blue);
 				tmpLayoutMenu4.addView(tmpLinearLayout);
-			}
-			else{
-				tmpLinearLayout = (LinearLayout) findViewById(Integer.parseInt( dataFromClient.get("id")));
+			} else {
+				tmpLinearLayout = (LinearLayout) findViewById(Integer.parseInt(dataFromClient.get("id")));
 				tmpLinearLayout.removeAllViews();
 			}
 			TextView tmpTitle = new TextView(this);
@@ -301,7 +302,7 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 					LinearLayout.LayoutParams.WRAP_CONTENT));
 			tmpTitle.setTextSize(30);
 			tmpTitle.setTextColor(Color.BLUE);
-			tmpTitle.setText("Device id: "+dataFromClient.get("id"));
+			tmpTitle.setText("Device id: " + dataFromClient.get("id"));
 			tmpLinearLayout.addView(tmpTitle);
 			//adding onClick event
 			tmpLinearLayout.setClickable(true);
@@ -330,26 +331,59 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 			Iterator iterator = set.iterator();
 			while (iterator.hasNext()) {
 				Map.Entry mentry = (Map.Entry) iterator.next();
-				if(!mentry.getKey().toString().contentEquals("id"))
+				if (!mentry.getKey().toString().contentEquals("id"))
 					viewText += mentry.getKey() + " : " + mentry.getValue() + "\n";
 			}
 			tv.setText(viewText);
-		//central heatingx
-			if(dataFromClient.get("id").toString().equals(db.getHeatingData("processTemperatureId"))) {
+			//central heatingx
+			if (dataFromClient.get("id").toString().equals(db.getHeatingData("processTemperatureId"))) {
 				actualTemperature = dataFromClient.get("sensorTemperature").toString();
-				String Setpoint = db.getHeatingData("setpoint");
-				if(actualTemperature.length()>=1 && Setpoint.length()>=1){
-					if(Float.parseFloat(actualTemperature) > Float.parseFloat(Setpoint))
-						TCPCommunicator.setOutputModuleState(false);
-					else
-						TCPCommunicator.setOutputModuleState(true);
+				//String Setpoint = db.getHeatingData("setpoint");
+				if (actualTemperature.length() >= 1)
+					db.setHeatingData("processTemperature", actualTemperature);
+				/*if(actualTemperature.length()>=1 && Setpoint.length()>=1){
+					if(Float.parseFloat(actualTemperature) > Float.parseFloat(Setpoint)) {
+                        TCPCommunicator.setOutputModuleState(false);
+                        db.setHeatingData("state","OFF");
+					}
+					else {
+                        TCPCommunicator.setOutputModuleState(true);
+                        db.setHeatingData("state", "ON");
+                    }
+				}*/
+			}
 
+			if (dataFromClient.get("id").toString().equals(db.getHeatingData("waterLoopId"))) {
+				waterLoopTemperature = dataFromClient.get("sensorTemperature").toString();
+				if (waterLoopTemperature.length() >= 1)
+					db.setHeatingData("waterLoop", waterLoopTemperature);
+				String setpoint = db.getHeatingData("setpoint");
+				String processTemperature = db.getHeatingData("processTemperature");
+				if (processTemperature.length() >= 1 && setpoint.length() >= 1) {
+					if (Float.parseFloat(processTemperature) > Float.parseFloat(setpoint)) {
+						TCPCommunicator.setOutputModuleState(false);
+						db.setHeatingData("state", "OFF");
+					} else {
+						TCPCommunicator.setOutputModuleState(true);
+						db.setHeatingData("state", "ON");
+					}
 				}
 			}
 
-			if(dataFromClient.get("id").toString().equals(db.getHeatingData("waterLoopId")))
-				waterLoopTemperature= dataFromClient.get("sensorTemperature").toString();
-
+            //sending resposne to outputModule
+            if (dataFromClient.get("id").toString().equals(db.getHeatingData("waterLoopId"))) {
+                try {
+                    DataOutputStream out = null;
+                    out = new DataOutputStream(clientSocket.getOutputStream());
+                    out.writeBytes("<content><outputState>"
+                            + (db.getHeatingData("state").equals("ON") ? "ON" : "OFF")+"</outputState>"
+                            +"<roomTemperature>"+ db.getHeatingData("processTemperature")+"</roomTemperature>"
+                            +"<setpointTemperature>"+ db.getHeatingData("setpoint")+"</setpointTemperature>"
+                            +"</content>");
+                } catch (IOException e) {
+                    return;
+                }
+            }
 		}
 		else{
 			String toastText=new String();

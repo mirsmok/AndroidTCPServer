@@ -62,6 +62,13 @@
             android:orientation="vertical"
             android:visibility="visible"
             android:paddingTop="30dp">
+
+            <TextView
+                android:id="@+id/titleMenu1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/TitleMenu1"
+                style="@style/menu_title_text"/>
             <TableLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
@@ -79,7 +86,7 @@
                         android:id="@+id/workarea1Item1Value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="23.4"
+                        android:text=""
                         style="@style/workarea_item_value"
                         android:inputType="none"
                         android:editable="false"/>
@@ -110,7 +117,7 @@
                         android:id="@+id/workarea1Item3Value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="60.0"
+                        android:text=""
                         style="@style/workarea_item_value"
                         android:inputType="none"
                         android:editable="false"/>
@@ -124,7 +131,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/plomien_on"
+                    android:src="@drawable/plomien_off"
                     android:background="@android:color/transparent"/>
             </LinearLayout>
 

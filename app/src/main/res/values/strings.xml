@@ -3,26 +3,26 @@
 
     <string name="app_name">IQhome</string>
     <string name="action_settings">Settings</string>
-    <string name="LeftMenuBtn1">Hating</string>
-    <string name="LeftMenuBtn2">Lights</string>
-    <string name="LeftMenuBtn3">Cameras</string>
-    <string name="LeftMenuBtn4">Devices</string>
-    <string name="LeftMenuBtn5">Settings</string>
-    <string name="LeftMenuBtn6">Statistics</string>
+    <string name="LeftMenuBtn1">Ogrzewanie</string>
+    <string name="LeftMenuBtn2">Światło</string>
+    <string name="LeftMenuBtn3">Kamery</string>
+    <string name="LeftMenuBtn4">Urządzenia</string>
+    <string name="LeftMenuBtn5">Ustawienia</string>
+    <string name="LeftMenuBtn6">Statystyki</string>
     <string name="LeftMenuBtn7">Info</string>
 
-    <string name="TitleMenu1">Hating</string>
-    <string name="TitleMenu2">Lights</string>
-    <string name="TitleMenu3">Cameras</string>
-    <string name="TitleMenu4">Devices</string>
-    <string name="TitleMenu5">Settings</string>
-    <string name="TitleMenu6">Statistics</string>
-    <string name="TitleMenu7">Info</string>
+    <string name="TitleMenu1">OGRZEWANIE</string>
+    <string name="TitleMenu2">ŚWIATŁO</string>
+    <string name="TitleMenu3">KAMERY</string>
+    <string name="TitleMenu4">URZĄDZENIA</string>
+    <string name="TitleMenu5">USTAWIENIA</string>
+    <string name="TitleMenu6">STATYSTYKI</string>
+    <string name="TitleMenu7">INFO</string>
 
     <!-- workarea 1 Item names -->
-    <string name="workarea1_item1_name">Aktualna Temperatura</string>
-    <string name="workarea1_item2_name">Zadana Temperatura</string>
-    <string name="workarea1_item3_name">Temperatura Wody CO</string>
+    <string name="workarea1_item1_name">Aktualnie</string>
+    <string name="workarea1_item2_name">Zadana</string>
+    <string name="workarea1_item3_name">Woda CO</string>
     <!-- workarea 7 Item names -->
     <string name="workarea7_item1_name">Adddress IP :</string>
 

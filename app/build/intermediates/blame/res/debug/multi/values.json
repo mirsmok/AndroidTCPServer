@@ -154,8 +154,8 @@
                     "startLine": 4,
                     "startColumn": 4,
                     "startOffset": 169,
-                    "endColumn": 47,
-                    "endOffset": 212
+                    "endColumn": 51,
+                    "endOffset": 216
                 },
                 "from": {
                     "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
@@ -165,9 +165,9 @@
                 "to": {
                     "startLine": 5,
                     "startColumn": 4,
-                    "startOffset": 217,
-                    "endColumn": 47,
-                    "endOffset": 260
+                    "startOffset": 221,
+                    "endColumn": 48,
+                    "endOffset": 265
                 },
                 "from": {
                     "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
@@ -177,9 +177,9 @@
                 "to": {
                     "startLine": 6,
                     "startColumn": 4,
-                    "startOffset": 265,
-                    "endColumn": 48,
-                    "endOffset": 309
+                    "startOffset": 270,
+                    "endColumn": 47,
+                    "endOffset": 313
                 },
                 "from": {
                     "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
@@ -189,9 +189,9 @@
                 "to": {
                     "startLine": 7,
                     "startColumn": 4,
-                    "startOffset": 314,
-                    "endColumn": 48,
-                    "endOffset": 358
+                    "startOffset": 318,
+                    "endColumn": 51,
+                    "endOffset": 365
                 },
                 "from": {
                     "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
@@ -201,9 +201,9 @@
                 "to": {
                     "startLine": 8,
                     "startColumn": 4,
-                    "startOffset": 363,
-                    "endColumn": 49,
-                    "endOffset": 408
+                    "startOffset": 370,
+                    "endColumn": 51,
+                    "endOffset": 417
                 },
                 "from": {
                     "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
@@ -213,9 +213,9 @@
                 "to": {
                     "startLine": 9,
                     "startColumn": 4,
-                    "startOffset": 413,
+                    "startOffset": 422,
                     "endColumn": 51,
-                    "endOffset": 460
+                    "endOffset": 469
                 },
                 "from": {
                     "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
@@ -225,9 +225,9 @@
                 "to": {
                     "startLine": 10,
                     "startColumn": 4,
-                    "startOffset": 465,
+                    "startOffset": 474,
                     "endColumn": 45,
-                    "endOffset": 506
+                    "endOffset": 515
                 },
                 "from": {
                     "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
@@ -237,9 +237,9 @@
                 "to": {
                     "startLine": 11,
                     "startColumn": 4,
-                    "startOffset": 511,
-                    "endColumn": 45,
-                    "endOffset": 552
+                    "startOffset": 520,
+                    "endColumn": 49,
+                    "endOffset": 565
                 },
                 "from": {
                     "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
@@ -249,81 +249,123 @@
                 "to": {
                     "startLine": 12,
                     "startColumn": 4,
-                    "startOffset": 557,
-                    "endColumn": 45,
-                    "endOffset": 598
+                    "startOffset": 570,
+                    "endColumn": 46,
+                    "endOffset": 612
                 },
                 "from": {
-                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
+                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 569,
+                        "endColumn": 46,
+                        "endOffset": 611
+                    }
                 }
             },
             {
                 "to": {
                     "startLine": 13,
                     "startColumn": 4,
-                    "startOffset": 603,
-                    "endColumn": 46,
-                    "endOffset": 645
+                    "startOffset": 617,
+                    "endColumn": 45,
+                    "endOffset": 658
                 },
                 "from": {
-                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
+                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 617,
+                        "endColumn": 45,
+                        "endOffset": 658
+                    }
                 }
             },
             {
                 "to": {
                     "startLine": 14,
                     "startColumn": 4,
-                    "startOffset": 650,
-                    "endColumn": 46,
-                    "endOffset": 692
+                    "startOffset": 663,
+                    "endColumn": 49,
+                    "endOffset": 708
                 },
                 "from": {
-                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
+                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 664,
+                        "endColumn": 49,
+                        "endOffset": 709
+                    }
                 }
             },
             {
                 "to": {
                     "startLine": 15,
                     "startColumn": 4,
-                    "startOffset": 697,
-                    "endColumn": 47,
-                    "endOffset": 740
+                    "startOffset": 713,
+                    "endColumn": 49,
+                    "endOffset": 758
                 },
                 "from": {
-                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
+                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 715,
+                        "endColumn": 49,
+                        "endOffset": 760
+                    }
                 }
             },
             {
                 "to": {
                     "startLine": 16,
                     "startColumn": 4,
-                    "startOffset": 745,
+                    "startOffset": 763,
                     "endColumn": 49,
-                    "endOffset": 790
+                    "endOffset": 808
                 },
                 "from": {
-                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
+                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 766,
+                        "endColumn": 49,
+                        "endOffset": 811
+                    }
                 }
             },
             {
                 "to": {
                     "startLine": 17,
                     "startColumn": 4,
-                    "startOffset": 795,
+                    "startOffset": 813,
                     "endColumn": 43,
-                    "endOffset": 834
+                    "endOffset": 852
                 },
                 "from": {
-                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
+                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 817,
+                        "endColumn": 43,
+                        "endOffset": 856
+                    }
                 }
             },
             {
                 "to": {
                     "startLine": 18,
                     "startColumn": 4,
-                    "startOffset": 839,
+                    "startOffset": 857,
                     "endColumn": 52,
-                    "endOffset": 887
+                    "endOffset": 905
                 },
                 "from": {
                     "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
@@ -333,9 +375,9 @@
                 "to": {
                     "startLine": 19,
                     "startColumn": 4,
-                    "startOffset": 892,
+                    "startOffset": 910,
                     "endColumn": 43,
-                    "endOffset": 931
+                    "endOffset": 949
                 },
                 "from": {
                     "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
@@ -345,66 +387,45 @@
                 "to": {
                     "startLine": 20,
                     "startColumn": 4,
-                    "startOffset": 936,
-                    "endColumn": 69,
-                    "endOffset": 1001
+                    "startOffset": 954,
+                    "endColumn": 58,
+                    "endOffset": 1008
                 },
                 "from": {
-                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 22,
-                        "startColumn": 4,
-                        "startOffset": 882,
-                        "endColumn": 69,
-                        "endOffset": 947
-                    }
+                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 21,
                     "startColumn": 4,
-                    "startOffset": 1006,
-                    "endColumn": 67,
-                    "endOffset": 1069
+                    "startOffset": 1013,
+                    "endColumn": 55,
+                    "endOffset": 1064
                 },
                 "from": {
-                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 23,
-                        "startColumn": 4,
-                        "startOffset": 953,
-                        "endColumn": 67,
-                        "endOffset": 1016
-                    }
+                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 22,
                     "startColumn": 4,
-                    "startOffset": 1074,
-                    "endColumn": 68,
-                    "endOffset": 1138
+                    "startOffset": 1069,
+                    "endColumn": 56,
+                    "endOffset": 1121
                 },
                 "from": {
-                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml",
-                    "position": {
-                        "startLine": 24,
-                        "startColumn": 4,
-                        "startOffset": 1022,
-                        "endColumn": 68,
-                        "endOffset": 1086
-                    }
+                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
                 }
             },
             {
                 "to": {
                     "startLine": 23,
                     "startColumn": 4,
-                    "startOffset": 1143,
+                    "startOffset": 1126,
                     "endColumn": 62,
-                    "endOffset": 1201
+                    "endOffset": 1184
                 },
                 "from": {
                     "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/strings.xml"
@@ -414,52 +435,10 @@
                 "to": {
                     "startLine": 24,
                     "startColumn": 4,
-                    "startOffset": 1206,
-                    "endLine": 30,
+                    "startOffset": 1189,
+                    "endLine": 26,
                     "endColumn": 12,
-                    "endOffset": 1492
-                },
-                "from": {
-                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/styles.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 4,
-                        "startOffset": 192,
-                        "endLine": 12,
-                        "endColumn": 12,
-                        "endOffset": 484
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 31,
-                    "startColumn": 4,
-                    "startOffset": 1497,
-                    "endLine": 33,
-                    "endColumn": 12,
-                    "endOffset": 1652
-                },
-                "from": {
-                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/styles.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 4,
-                        "startOffset": 525,
-                        "endLine": 17,
-                        "endColumn": 12,
-                        "endOffset": 682
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 34,
-                    "startColumn": 4,
-                    "startOffset": 1657,
-                    "endLine": 46,
-                    "endColumn": 12,
-                    "endOffset": 2281
+                    "endOffset": 1267
                 },
                 "from": {
                     "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/styles.xml"
@@ -467,12 +446,12 @@
             },
             {
                 "to": {
-                    "startLine": 47,
+                    "startLine": 27,
                     "startColumn": 4,
-                    "startOffset": 2286,
-                    "endLine": 55,
+                    "startOffset": 1272,
+                    "endLine": 29,
                     "endColumn": 12,
-                    "endOffset": 2758
+                    "endOffset": 1339
                 },
                 "from": {
                     "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/styles.xml"
@@ -480,12 +459,12 @@
             },
             {
                 "to": {
-                    "startLine": 56,
+                    "startLine": 30,
                     "startColumn": 4,
-                    "startOffset": 2763,
-                    "endLine": 68,
+                    "startOffset": 1344,
+                    "endLine": 42,
                     "endColumn": 12,
-                    "endOffset": 3387
+                    "endOffset": 1968
                 },
                 "from": {
                     "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/styles.xml"
@@ -493,12 +472,12 @@
             },
             {
                 "to": {
-                    "startLine": 69,
+                    "startLine": 43,
                     "startColumn": 4,
-                    "startOffset": 3392,
-                    "endLine": 81,
+                    "startOffset": 1973,
+                    "endLine": 51,
                     "endColumn": 12,
-                    "endOffset": 4021
+                    "endOffset": 2445
                 },
                 "from": {
                     "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/styles.xml"
@@ -506,33 +485,51 @@
             },
             {
                 "to": {
-                    "startLine": 82,
+                    "startLine": 52,
                     "startColumn": 4,
-                    "startOffset": 4026,
-                    "endLine": 91,
+                    "startOffset": 2450,
+                    "endLine": 64,
                     "endColumn": 12,
-                    "endOffset": 4506
+                    "endOffset": 3074
                 },
                 "from": {
-                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/styles.xml",
-                    "position": {
-                        "startLine": 69,
-                        "startColumn": 4,
-                        "startOffset": 3155,
-                        "endLine": 78,
-                        "endColumn": 12,
-                        "endOffset": 3652
-                    }
+                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/styles.xml"
                 }
             },
             {
                 "to": {
-                    "startLine": 92,
+                    "startLine": 65,
                     "startColumn": 4,
-                    "startOffset": 4511,
-                    "endLine": 100,
+                    "startOffset": 3079,
+                    "endLine": 77,
                     "endColumn": 12,
-                    "endOffset": 4943
+                    "endOffset": 3710
+                },
+                "from": {
+                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 78,
+                    "startColumn": 4,
+                    "startOffset": 3715,
+                    "endLine": 87,
+                    "endColumn": 12,
+                    "endOffset": 4195
+                },
+                "from": {
+                    "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/styles.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 88,
+                    "startColumn": 4,
+                    "startOffset": 4200,
+                    "endLine": 96,
+                    "endColumn": 12,
+                    "endOffset": 4632
                 },
                 "from": {
                     "file": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/values/styles.xml"

@@ -224,7 +224,7 @@ public class TCPCommunicator {
                             }
                         });
                         //out.writeBytes(line + "\n\r");
-						out.writeBytes("<content><outputState>"+ (TCPCommunicator.getOutputModuleState() ? "ON" : "OFF")+"</outputState></content>");
+						//out.writeBytes("<content><outputState>"+ (TCPCommunicator.getOutputModuleState() ? "ON" : "OFF")+"</outputState></content>");
 						out.flush();
 					}
 				} catch (IOException e) {

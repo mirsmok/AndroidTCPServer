@@ -96,13 +96,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Getting single contact
     public String getHeatingData(String Name) {
         SQLiteDatabase db = this.getReadableDatabase();
-
+        String value;
         Cursor cursor = db.query(TABLE_HEATING, new String[] { KEY_ID,
                         KEY_NAME, KEY_VALUE }, KEY_NAME + "=?",
                 new String[] { Name }, null, null, null, null);
         if (cursor != null && cursor.getCount()>0) {
             cursor.moveToFirst();
-            return cursor.getString(2);
+            value=cursor.getString(2);
+            cursor.close();
+            return value;
             }
         else
             return "";
