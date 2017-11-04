@@ -32,11 +32,15 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends Activity implements OnTCPMessageRecievedListener {
 
 	private Handler handler = new Handler();
 	private DatabaseHandler db = new DatabaseHandler(this);
+    private IoTInterface IoTThinkspeak= new IoTInterface();
+    private Timer myTimer;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -63,7 +67,46 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 						return false;
 					}
 				});
+        //timer dla IoT
+        myTimer = new Timer();
+        myTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                TimerMethod();
+            }
+
+        }, 0, 60000);
 	}
+
+    private void TimerMethod()
+    {
+        //This method is called directly by the timer
+        //and runs in the same thread as the timer.
+
+        //We call the method that will work with the UI
+        //through the runOnUiThread method.
+        this.runOnUiThread(Timer_Tick);
+    }
+
+
+    private Runnable Timer_Tick = new Runnable() {
+        public void run() {
+
+            //This method runs in the same thread as the UI.
+
+            //Do something to the UI thread here
+            String fied1= db.getHeatingData("processTemperature");
+            String fied2= "4.23";
+            String fied3= "-65";
+            String fied4= "2.0";
+            String fied5= db.getHeatingData("setpoint");
+            String fied6= db.getHeatingData("state");
+            String fied7= "1";
+            String fied8= "2";
+            String [] IoTData = {fied1,fied2,fied3,fied4,fied5,fied6,fied7,fied8};
+            IoTThinkspeak.SendData(getApplicationContext(),handler,0,IoTData);
+        }
+    };
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

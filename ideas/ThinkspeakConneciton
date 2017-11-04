@@ -1,0 +1,22 @@
+//thinkspeak.com settings
+const char* host = "api.thingspeak.com";
+//const int channelID = XXX;
+String writeAPIKey = "HPGNR50XGF9V9KAD"; // write API key for your ThingSpeak Channel
+
+ String body = "field1=";
+           body += String(temperature);
+           body += String("&field2=");
+           body += String(supplayVoltage);
+           body += String("&field3=");
+           body += String(rssi);
+
+    client.print("POST /update HTTP/1.1\n");
+    client.print("Host: api.thingspeak.com\n");
+    client.print("Connection: close\n");
+    client.print("X-THINGSPEAKAPIKEY: " + writeAPIKey + "\n");
+    client.print("Content-Type: application/x-www-form-urlencoded\n");
+    client.print("Content-Length: ");
+    client.print(body.length());
+    client.print("\n\n");
+    client.print(body);
+    client.print("\n\n");
