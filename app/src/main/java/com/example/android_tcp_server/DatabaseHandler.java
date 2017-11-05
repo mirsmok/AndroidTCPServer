@@ -39,9 +39,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             addHeatingData("setpoint", "22.2");
             addHeatingData("setpointId","1002");
             addHeatingData("processTemperature","21.0");
+            addHeatingData("processSensorVoltage","0.0");
+            addHeatingData("processSensorRSSI","0");
             addHeatingData("processTemperatureId","2001");
-            addHeatingData("waterLoop","40.0");
+            addHeatingData("waterLoop","0.0");
             addHeatingData("waterLoopId","1002");
+            addHeatingData("externalTemperature","0.0");
             addHeatingData("state","OFF");
             addHeatingData("controll","remote");
             addHeatingData("setpointSource","remote");

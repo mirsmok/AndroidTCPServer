@@ -40,6 +40,7 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 	private Handler handler = new Handler();
 	private DatabaseHandler db = new DatabaseHandler(this);
     private IoTInterface IoTThinkspeak= new IoTInterface();
+    private weatherInterface actualWeather = new weatherInterface();
     private Timer myTimer;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +76,7 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
                 TimerMethod();
             }
 
-        }, 0, 60000);
+        }, 0, 300000);
 	}
 
     private void TimerMethod()
@@ -95,13 +96,20 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
             //This method runs in the same thread as the UI.
 
             //Do something to the UI thread here
+            //weather stuff
+            String weather = actualWeather.readWeather(getApplicationContext(),handler);
+            if(actualWeather.findTag("","temp_c").length()>1) {
+                String temperaturaZewnetrzna=actualWeather.findTag("","temp_c");
+                db.setHeatingData("externalTemperature",temperaturaZewnetrzna);
+            }
+            // IoT Stuff
             String fied1= db.getHeatingData("processTemperature");
-            String fied2= "4.23";
-            String fied3= "-65";
-            String fied4= "2.0";
+            String fied2= db.getHeatingData("processSensorVoltage");
+            String fied3= db.getHeatingData("processSensorRSSI");
+            String fied4= db.getHeatingData("externalTemperature");
             String fied5= db.getHeatingData("setpoint");
-            String fied6= db.getHeatingData("state");
-            String fied7= "1";
+            String fied6= db.getHeatingData("state").equals("ON") ? "1": "0";
+            String fied7= db.getHeatingData("waterLoop");
             String fied8= "2";
             String [] IoTData = {fied1,fied2,fied3,fied4,fied5,fied6,fied7,fied8};
             IoTThinkspeak.SendData(getApplicationContext(),handler,0,IoTData);
@@ -381,9 +389,15 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 			//central heatingx
 			if (dataFromClient.get("id").toString().equals(db.getHeatingData("processTemperatureId"))) {
 				actualTemperature = dataFromClient.get("sensorTemperature").toString();
+                String rssi = dataFromClient.get("RSSI").toString();
+                String voltage = dataFromClient.get("supplayVoltage").toString();
 				//String Setpoint = db.getHeatingData("setpoint");
-				if (actualTemperature.length() >= 1)
-					db.setHeatingData("processTemperature", actualTemperature);
+                if (actualTemperature.length() >= 1)
+                    db.setHeatingData("processTemperature", actualTemperature);
+                if (rssi.length() >= 1)
+                    db.setHeatingData("processSensorRSSI", rssi);
+                if (voltage.length() >= 1)
+                    db.setHeatingData("processSensorVoltage", voltage);
 				/*if(actualTemperature.length()>=1 && Setpoint.length()>=1){
 					if(Float.parseFloat(actualTemperature) > Float.parseFloat(Setpoint)) {
                         TCPCommunicator.setOutputModuleState(false);
