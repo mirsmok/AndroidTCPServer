@@ -23,6 +23,7 @@
     <string name="workarea1_item1_name">Aktualnie</string>
     <string name="workarea1_item2_name">Zadana</string>
     <string name="workarea1_item3_name">Woda CO</string>
+    <string name="workarea1_item4_name">Zewnętrzna</string>
     <!-- workarea 7 Item names -->
     <string name="workarea7_item1_name">Adddress IP :</string>
 

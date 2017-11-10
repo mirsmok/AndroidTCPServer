@@ -58,6 +58,7 @@ public class IoTInterface {
                             Toast.makeText(appContext ,"cant connect", Toast.LENGTH_SHORT).show();
                         }
                     });
+                    return ;
                 }
                 try
                 {
@@ -116,6 +117,7 @@ public class IoTInterface {
                             Toast.makeText(appContext ,"error while closing socket", Toast.LENGTH_SHORT).show();
                         }
                     });
+                    return;
                 }
             }
 

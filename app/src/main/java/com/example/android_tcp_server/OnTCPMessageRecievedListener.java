@@ -7,6 +7,6 @@ import java.net.Socket;
 
 public interface OnTCPMessageRecievedListener {
 	public void onTCPMessageRecieved(String message);
-	public void ModyfyView (Socket clientSocket, int Action, String Str);
+	public String ModyfyView ( int socketId, String Str);
 }
 

@@ -8,19 +8,7 @@
         "source": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/drawable-xxhdpi/menu_button.xml"
     },
     {
-        "merged": "/home/mirsmok/work/AndroidTCPServer/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/red_button.xml",
-        "source": "/home/mirsmok/work/AndroidTCPServer/app/src/main/res/drawable-xxhdpi/red_button.xml"
-    },
-    {
         "merged": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/menu_left_button.xml",
         "source": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/drawable-xxhdpi/menu_left_button.xml"
-    },
-    {
-        "merged": "/home/mirsmok/work/AndroidTCPServer/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/menu_left_button.xml",
-        "source": "/home/mirsmok/work/AndroidTCPServer/app/src/main/res/drawable-xxhdpi/menu_left_button.xml"
-    },
-    {
-        "merged": "/home/mirsmok/work/AndroidTCPServer/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/menu_button.xml",
-        "source": "/home/mirsmok/work/AndroidTCPServer/app/src/main/res/drawable-xxhdpi/menu_button.xml"
     }
 ]

@@ -46,10 +46,12 @@ public class TCPCommunicator {
 	private static OutputStream outputStream;
 	private static Handler handler = new Handler();
 	private static Boolean outputModuleState;
+	private static String responseToClient;
 	private TCPCommunicator()
 	{
 		allListeners = new ArrayList<OnTCPMessageRecievedListener>();
 		outputModuleState=false;
+		NoClients=0;
 	}
 	public static Boolean getOutputModuleState(){
 		return outputModuleState;
@@ -77,11 +79,11 @@ public class TCPCommunicator {
 	{
 		return NoClients;
 	}
-	public static  TCPWriterErrors writeToSocket(int index,JSONObject obj)
+	public static  TCPWriterErrors writeToSocket(int index,String obj)
 	{
 		try
 		{
-		out.get(index).write(obj.toString() + System.getProperty("line.separator"));
+		out.get(index).write(obj + System.getProperty("line.separator"));
 		out.get(index).flush();
 		}
 		catch(Exception e)
@@ -162,7 +164,6 @@ public class TCPCommunicator {
                 try {
 
                     socket = ss.accept();
-					NoClients++;
 					in.add(new BufferedReader(new InputStreamReader(socket.getInputStream())));
 					out.add(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())));
                 } catch (IOException e) {
@@ -170,6 +171,7 @@ public class TCPCommunicator {
                 }
                 // new thread for a client
                 new EchoThread(socket,NoClients).start();
+				NoClients++;
             }
 
         }
@@ -218,14 +220,12 @@ public class TCPCommunicator {
                                 // TODO Auto-generated method stub
                                 for(OnTCPMessageRecievedListener listener:allListeners) {
 									listener.onTCPMessageRecieved(finalMessage);
-									listener.ModyfyView(socket,socketId,finalMessage);
+									responseToClient=new String(listener.ModyfyView(socketId,finalMessage));
 								}
                                 Log.e("TCP", finalMessage);
                             }
                         });
-                        //out.writeBytes(line + "\n\r");
-						//out.writeBytes("<content><outputState>"+ (TCPCommunicator.getOutputModuleState() ? "ON" : "OFF")+"</outputState></content>");
-						out.flush();
+						out.writeBytes(responseToClient+System.getProperty("line.separator"));
 					}
 				} catch (IOException e) {
 					e.printStackTrace();

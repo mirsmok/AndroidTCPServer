@@ -4,35 +4,11 @@
         "source": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/menu/main_activity2.xml"
     },
     {
-        "merged": "/home/mirsmok/work/AndroidTCPServer/app/build/intermediates/res/merged/debug/menu/order.xml",
-        "source": "/home/mirsmok/work/AndroidTCPServer/app/src/main/res/menu/order.xml"
-    },
-    {
-        "merged": "/home/mirsmok/AndroidStudioProjects/AndroidTCPServer/app/build/intermediates/res/merged/debug/menu/main_activity2.xml",
-        "source": "/home/mirsmok/AndroidStudioProjects/AndroidTCPServer/app/src/main/res/menu/main_activity2.xml"
-    },
-    {
-        "merged": "/home/mirsmok/AndroidStudioProjects/AndroidTCPServer/app/build/intermediates/res/merged/debug/menu/main.xml",
-        "source": "/home/mirsmok/AndroidStudioProjects/AndroidTCPServer/app/src/main/res/menu/main.xml"
-    },
-    {
-        "merged": "/home/mirsmok/AndroidStudioProjects/AndroidTCPServer/app/build/intermediates/res/merged/debug/menu/order.xml",
-        "source": "/home/mirsmok/AndroidStudioProjects/AndroidTCPServer/app/src/main/res/menu/order.xml"
-    },
-    {
         "merged": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/merged/debug/menu/main.xml",
         "source": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/menu/main.xml"
     },
     {
-        "merged": "/home/mirsmok/work/AndroidTCPServer/app/build/intermediates/res/merged/debug/menu/main.xml",
-        "source": "/home/mirsmok/work/AndroidTCPServer/app/src/main/res/menu/main.xml"
-    },
-    {
         "merged": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/merged/debug/menu/order.xml",
         "source": "/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/src/main/res/menu/order.xml"
-    },
-    {
-        "merged": "/home/mirsmok/work/AndroidTCPServer/app/build/intermediates/res/merged/debug/menu/main_activity2.xml",
-        "source": "/home/mirsmok/work/AndroidTCPServer/app/src/main/res/menu/main_activity2.xml"
     }
 ]

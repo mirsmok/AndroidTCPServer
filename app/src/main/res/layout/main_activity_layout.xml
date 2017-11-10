@@ -107,7 +107,6 @@
                         android:inputType="numberDecimal"/>
                 </TableRow>
                 <TableRow>
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -115,6 +114,21 @@
                         style="@style/workarea_item_name"/>
                     <EditText
                         android:id="@+id/workarea1Item3Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        style="@style/workarea_item_value"
+                        android:inputType="none"
+                        android:editable="false"/>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/workarea1_item4_name"
+                        style="@style/workarea_item_name"/>
+                    <EditText
+                        android:id="@+id/workarea1Item4Value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""

@@ -25,8 +25,10 @@ import android.widget.Toast;
 import com.example.android_tcp_server.EnumsAndStatics.MessageTypes;
 import com.example.orderingapp.R;
 
+import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -35,20 +37,22 @@ import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends Activity implements OnTCPMessageRecievedListener {
+public class MainActivity extends Activity implements OnTCPMessageRecievedListener,weatherListener{
 
 	private Handler handler = new Handler();
 	private DatabaseHandler db = new DatabaseHandler(this);
     private IoTInterface IoTThinkspeak= new IoTInterface();
-    private weatherInterface actualWeather = new weatherInterface();
     private Timer myTimer;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_activity_layout);
-    	TCPCommunicator writer =TCPCommunicator.getInstance();
-    	TCPCommunicator.addListener(this);
-    	writer.init(1500);
+		TCPCommunicator writer =TCPCommunicator.getInstance();
+		TCPCommunicator.addListener(this);
+		writer.init(1500);
+		weatherInterface actualWeather = weatherInterface.getInstance();
+		weatherInterface.addListener(this);
+		actualWeather.init();
 		//ustawienie adresu ip servera
         WifiManager wm = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 		@SuppressWarnings("deprecation")
@@ -96,12 +100,6 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
             //This method runs in the same thread as the UI.
 
             //Do something to the UI thread here
-            //weather stuff
-            String weather = actualWeather.readWeather(getApplicationContext(),handler);
-            if(actualWeather.findTag("","temp_c").length()>1) {
-                String temperaturaZewnetrzna=actualWeather.findTag("","temp_c");
-                db.setHeatingData("externalTemperature",temperaturaZewnetrzna);
-            }
             // IoT Stuff
             String fied1= db.getHeatingData("processTemperature");
             String fied2= db.getHeatingData("processSensorVoltage");
@@ -326,9 +324,10 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 
 		
 	}
-	public void ModyfyView(Socket clientSocket, int clientId, String Str) {
+	public String ModyfyView( int clientId, String Str) {
 
 		final String Text = Str;
+		String response="";
 		String actualTemperature= new String("");
         String waterLoopTemperature=new String("");
 		ReadXMLString xmlReader= new ReadXMLString();
@@ -357,7 +356,8 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 			tmpLinearLayout.addView(tmpTitle);
 			//adding onClick event
 			tmpLinearLayout.setClickable(true);
-			if (dataFromClient.get("dev_type").toString().equals("outputModule")) {
+			if (dataFromClient.get("dev_type")!=null
+					&& dataFromClient.get("dev_type").toString().equals("outputModule")) {
 				tmpLinearLayout.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {
@@ -387,7 +387,10 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 			}
 			tv.setText(viewText);
 			//central heatingx
-			if (dataFromClient.get("id").toString().equals(db.getHeatingData("processTemperatureId"))) {
+			if (dataFromClient.get("id").toString().equals(db.getHeatingData("processTemperatureId"))
+					&& dataFromClient.get("sensorTemperature")!=null
+					&& dataFromClient.get("RSSI")!=null
+					&& dataFromClient.get("supplayVoltage")!=null) {
 				actualTemperature = dataFromClient.get("sensorTemperature").toString();
                 String rssi = dataFromClient.get("RSSI").toString();
                 String voltage = dataFromClient.get("supplayVoltage").toString();
@@ -410,7 +413,8 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 				}*/
 			}
 
-			if (dataFromClient.get("id").toString().equals(db.getHeatingData("waterLoopId"))) {
+			if (dataFromClient.get("id").toString().equals(db.getHeatingData("waterLoopId"))
+					&& dataFromClient.get("sensorTemperature")!=null) {
 				waterLoopTemperature = dataFromClient.get("sensorTemperature").toString();
 				if (waterLoopTemperature.length() >= 1)
 					db.setHeatingData("waterLoop", waterLoopTemperature);
@@ -429,17 +433,20 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 
             //sending resposne to outputModule
             if (dataFromClient.get("id").toString().equals(db.getHeatingData("waterLoopId"))) {
-                try {
-                    DataOutputStream out = null;
-                    out = new DataOutputStream(clientSocket.getOutputStream());
-                    out.writeBytes("<content><outputState>"
-                            + (db.getHeatingData("state").equals("ON") ? "ON" : "OFF")+"</outputState>"
-                            +"<roomTemperature>"+ db.getHeatingData("processTemperature")+"</roomTemperature>"
-                            +"<setpointTemperature>"+ db.getHeatingData("setpoint")+"</setpointTemperature>"
-                            +"</content>");
-                } catch (IOException e) {
-                    return;
-                }
+//                try {
+					//BufferedWriter out = null;
+					//out =new BufferedWriter( new OutputStreamWriter(clientSocket.getOutputStream()));
+					//DataOutputStream out = null;
+					//DataOutputStream out =new DataOutputStream(clientSocket.getOutputStream());
+					response="<content><outputState>"
+							+ (db.getHeatingData("state").equals("ON") ? "ON" : "OFF")+"</outputState>"
+							+"<roomTemperature>"+ db.getHeatingData("processTemperature")+"</roomTemperature>"
+							+"<setpointTemperature>"+ db.getHeatingData("setpoint")+"</setpointTemperature>"
+							+"</content>";
+                  //  TCPCommunicator.writeToSocket(clientId,response);
+  //              } catch (IOException e) {
+    //                return;
+      //          }
             }
 		}
 		else{
@@ -483,5 +490,45 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 
 					}
 				});
+		return response;
 	}
+	public void weatherUpdate(String weatherXML){
+        if(findTag(weatherXML,"temp_c").length()>=1){
+            final String externalTemperature=findTag(weatherXML,"temp_c");
+            handler.post(new Runnable() {
+
+                @Override
+                public void run() {
+                    // TODO Auto-generated method stub
+                    try
+                    {
+                        EditText editTxt = (EditText)findViewById(R.id.workarea1Item4Value);
+                        editTxt.setText(externalTemperature);
+                    }
+                    catch(Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        }
+	}
+    public String findTag(String source, String tag){
+        String missing = "";
+        if (source==null)
+            return missing;
+        if (source.length()<10)
+            return missing;
+        String startTag = "<"+tag+">";
+        String endTag = "</"+tag+">";
+        if(source.contains(startTag) && source.contains(endTag)){
+            int startIndex= source.indexOf(startTag)+startTag.length();
+            int stopIndex = source.indexOf(endTag);
+            return source.substring(startIndex,stopIndex);
+        }
+        else{
+            return missing;
+        }
+
+    }
 }

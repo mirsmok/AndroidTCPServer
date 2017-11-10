@@ -21,12 +21,17 @@
     <string name="workarea1_item1_name">Aktualnie</string>
     <string name="workarea1_item2_name">Zadana</string>
     <string name="workarea1_item3_name">Woda CO</string>
+    <string name="workarea1_item4_name">Zewnętrzna</string>
     <string name="workarea7_item1_name">Adddress IP :</string>
     <style name="AppBaseTheme" parent="android:Theme.Light">
-        
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
     </style>
     <style name="AppTheme" parent="AppBaseTheme">
-        
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
     <style name="button_text">
         <item name="android:layout_width">fill_parent</item>
