@@ -47,6 +47,7 @@ public class TCPCommunicator {
 	private static Handler handler = new Handler();
 	private static Boolean outputModuleState;
 	private static String responseToClient;
+	private static Boolean responseRecieved=false;
 	private TCPCommunicator()
 	{
 		allListeners = new ArrayList<OnTCPMessageRecievedListener>();
@@ -223,9 +224,12 @@ public class TCPCommunicator {
 									responseToClient=new String(listener.ModyfyView(socketId,finalMessage));
 								}
                                 Log.e("TCP", finalMessage);
+								responseRecieved=true;
                             }
                         });
+						while(!responseRecieved);
 						out.writeBytes(responseToClient+System.getProperty("line.separator"));
+						responseRecieved=false;
 					}
 				} catch (IOException e) {
 					e.printStackTrace();

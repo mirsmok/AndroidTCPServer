@@ -495,6 +495,7 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 	public void weatherUpdate(String weatherXML){
         if(findTag(weatherXML,"temp_c").length()>=1){
             final String externalTemperature=findTag(weatherXML,"temp_c");
+			db.setHeatingData("externalTemperature",externalTemperature);
             handler.post(new Runnable() {
 
                 @Override
