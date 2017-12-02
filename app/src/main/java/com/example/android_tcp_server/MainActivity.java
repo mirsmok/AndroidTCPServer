@@ -80,7 +80,7 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
                 TimerMethod();
             }
 
-        }, 0, 300000);
+        }, 0, 60000);
 	}
 
     private void TimerMethod()
@@ -431,7 +431,23 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 				}
 			}
 
-            //sending resposne to outputModule
+			//remote connection
+
+			if (dataFromClient.get("id").toString().equals("3000")
+					&& dataFromClient.get("user")!=null
+					&& dataFromClient.get("password")!=null
+					&& dataFromClient.get("setpoint")!=null) {
+				if (dataFromClient.get("user").toString().equals("admin")
+						&& dataFromClient.get("password").toString().equals("IQHRemote")) {
+					db.setHeatingData("setpoint", dataFromClient.get("setpoint"));
+					response="<content><outputState>"
+							+ (db.getHeatingData("state").equals("ON") ? "ON" : "OFF")+"</outputState>"
+							+"<roomTemperature>"+ db.getHeatingData("processTemperature")+"</roomTemperature>"
+							+"<setpointTemperature>"+ db.getHeatingData("setpoint")+"</setpointTemperature>"
+							+"</content>";
+				}
+			}
+			//sending resposne to outputModule
             if (dataFromClient.get("id").toString().equals(db.getHeatingData("waterLoopId"))) {
 //                try {
 					//BufferedWriter out = null;
@@ -482,7 +498,8 @@ public class MainActivity extends Activity implements OnTCPMessageRecievedListen
 							    TmpImageView.setImageResource(R.drawable.plomien_on);
                             else
                                 TmpImageView.setImageResource(R.drawable.plomien_off);
-							//dynamiczne tworzenie nowych elemetnow
+							TmpTextView = (TextView) findViewById(R.id.workarea1Item2Value);
+							TmpTextView.setText(db.getHeatingData("setpoint"));
 
 						} catch (Exception e) {
 							e.printStackTrace();

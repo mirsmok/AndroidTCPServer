@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Nov 11 12:36:41 CET 2017
+#Tue Nov 28 19:00:51 CET 2017
 8.set=ANDROID_RESOURCE
 1.base=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_
 1.file=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_/resources.arsc
@@ -19,7 +19,7 @@
 13.base=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_
 11.set=ANDROID_RESOURCE
 0.set=ANDROID_RESOURCE
-15.file=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/ic_launcher.png
+15.file=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/ic_launcher.png
 15.base=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_
 7.set=ANDROID_RESOURCE
 14.set=ANDROID_RESOURCE
@@ -33,9 +33,9 @@
 4.file=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/device_layout_backgroun_blue.xml
 4.base=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_
 6.base=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_
-6.file=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/plomien_off.png
+6.file=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/plomien_on.png
 10.base=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_
-10.file=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/plomien_on.png
+10.file=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_/res/drawable-xxhdpi-v4/plomien_off.png
 13.set=ANDROID_RESOURCE
 8.base=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_
 8.file=/home/mirsmok/work/AndroidStudio/AndroidTCPServer/app/build/intermediates/res/resources-debug.ap_/res/drawable-xhdpi-v4/device_layout_backgroun_red.xml

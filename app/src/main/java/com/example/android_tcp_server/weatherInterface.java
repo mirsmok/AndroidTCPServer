@@ -30,24 +30,17 @@ public class weatherInterface {
     private static BufferedWriter out;
     private static String weatherXML;
     private static String line;
-    private static Context appContext;
     private static Handler handler = new Handler();
-    private static Handler UIHandler;
     private static Timer weatherPollInterval;
     private static boolean timerTick;
     private weatherInterface(){
-        {
-            Log.i("weatherTask","tworzenie obiektu");
-            timerTick=false;
-            allListeners = new ArrayList<weatherListener>();
-//		}
-        }
-    }public static weatherInterface getInstance()
-    {
+        Log.i("weatherTask","tworzenie obiektu");
+        timerTick=false;
+        allListeners = new ArrayList<weatherListener>();
+    }
+    public static weatherInterface getInstance(){
         if(uniqInstance==null)
-        {
             uniqInstance = new weatherInterface();
-        }
         return uniqInstance;
     }
     public static void addListener(weatherListener listener)
@@ -67,8 +60,7 @@ public class weatherInterface {
 
         }, 0, 300000);
     }
-    private void TimerMethod()
-    {
+    private void TimerMethod() {
         //This method is called directly by the timer
         //and runs in the same thread as the timer.
         timerTick=true;
@@ -155,6 +147,7 @@ public class weatherInterface {
 
         }
     }
+
     public boolean readWeather(){
 
         Runnable runnable = new Runnable() {
@@ -203,6 +196,16 @@ public class weatherInterface {
                         }
                         Log.i("weatherTask","Linia: "+line);
                     } while (line!=null && !line.equals("</response>") );
+                    //zamykanie polaczenia
+                    try {
+                        in.close();
+                        out.close();
+                        weatherSocket.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        Log.e("weatherRead","Error while closing socket");
+                    }
+                    //wyslanie danych do UI poprzez interfejs
                     weatherXML=data;
                     final String finalMessage=weatherXML;
                     handler.post(new Runnable() {
@@ -219,15 +222,6 @@ public class weatherInterface {
                 } catch (IOException e) {
                     e.printStackTrace();
                     Log.e("weatherRead","Erro while reading from socket");
-                }
-                //zamykanie polaczenia
-                try {
-                    in.close();
-                    out.close();
-                    weatherSocket.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    Log.e("weatherRead","Error while closing socket");
                 }
             }
 
